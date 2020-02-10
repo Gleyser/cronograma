@@ -24,12 +24,12 @@
       }
     </style>
 <meta charset="ISO-8859-1">
-<title>Cadastro de Laboratório</title>
+<title>SGL - Laboratórios</title>
 </head>
 <body>
 <div class="container" align="center">
 <img class="mb-4" src="images/logo.png" alt="" width="335" height="150">
-<h3>Sistema de Gerenciamento de Laboratórios</h3>
+<h3>SGL - Cronograma</h3>
 </div>
 <div class="container" align="center">
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
@@ -58,7 +58,7 @@
 
 <div class="container" align="center">
 <br>
-<h5>Laboratórios cadastrados</h5>
+<h5>Cronograma</h5>
 <table class="table table-bordered table-striped table-hover">
         <tr>
             <td>Nome</td>
