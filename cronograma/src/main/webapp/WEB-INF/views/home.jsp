@@ -33,7 +33,7 @@
  <div class="container" align="center">
 <img class="mb-4" src="${images}/logo.png" alt="" width="335" height="150">
 <h3>Sistema de Gerenciamento de Laboratórios</h3>
-<form class="form-signin">
+<form class="form-signin" action="/cronograma/login" method="post">
   <div class="text-center mb-8">
    
     <h1 class="h3 mb-3 font-weight-normal">Login</h1>
@@ -41,12 +41,12 @@
   </div>
 
   <div class="form-label-group col-sm-3" align="center">
-    <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+    <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus>
     <label for="inputEmail"></label>
   </div>
 
   <div class="form-label-group col-sm-3">
-    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+    <input type="password" name="senha" class="form-control" placeholder="Senha" required>
     <label for="inputPassword"></label>
   </div>
   <br>

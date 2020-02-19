@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>SGL - Solicitar reserva de laboratório</title>
+<title>SGL - Cadastro de Laboratório</title>
 <c:url value="/resources/css" var="cssPath" />
 <c:url value="/images" var="images" />
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css" />
@@ -33,7 +33,7 @@
 			height="150">
 		<h3>Sistema de Gerenciamento de Laboratórios</h3>
 	</div>
-	<form action="/cronograma/reservas" method="post">
+	<form action="/cronograma/usuarios" method="post">
 		<div class="container" align="center">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -43,7 +43,7 @@
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="http://localhost:8080/cronograma/laboratorios">Cronograma</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="#">Fazer
+						<li class="nav-item"><a class="nav-link" href="http://localhost:8080/cronograma/reservas/form">Fazer
 								reserva</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">Solicitar
 								material impresso</a></li>
@@ -55,39 +55,28 @@
 			</nav>
 		</div>
 		<div class="container" align="center">
-			<h3>SGL - Solicitar reserva</h3>
+			<h3>SGL - Cadastro de Usuario</h3>
 			<div class="form-group col-sm-3">
-				Selecione o Laboratório: <select class="form-control"
-					name="lab">
-					<option>Lab1</option>
-					<option>Lab2</option>
-					<option>Lab3</option>
-					<option>Lab4</option>
-					<option>Lab5</option>
+			<div class="form-group">
+				<label>E-mail:</label> <input type="text" name="email" />
+			</div>
+			</div>
+<div class="form-group col-sm-3">
+			<div class="form-group">
+				<label>Senha:</label> <input type="text" name="senha" />
+			</div>
+			
+			<div class="form-group col-sm-9">
+				<label for="exampleFormControlSelect1">Cargo:</label> <select class="form-control"
+					name="cargo">
+					<option>Instrutor</option>
+					<option>Coordenador</option>									
 				</select>
 			</div>
-
-			<div class="form-group col-sm-3">
-				Data inicial: <input type="date" name="dataInicial" />
 			</div>
-			
-			<div class="form-group col-sm-3">
-				Data final: <input type="date" name="dataFinal" />
-			</div>
-			
-			<div class="form-group col-sm-3">
-				<label for="exampleFormControlSelect1">Turno</label> <select class="form-control"
-					name="turno">
-					<option>Manhã</option>
-					<option>Tarde</option>
-					<option>Noite</option>					
-				</select>
-			</div>
-			
-			
-			<button type="submit" class="btn btn-primary">Solicitar</button>
-		</div>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
+	</div>
 	</form>
-
+	
 </body>
 </html>
