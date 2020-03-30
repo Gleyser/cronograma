@@ -41,9 +41,10 @@
 <body>
 
 	<div class="container" align="center">
-		<img class="mb-4" src="images/logo.png" alt="" width="335"
+		<img class="mb-4" src="${images}/logo.png" alt="" width="335"
 			height="150">
-		<h3>Sistema de Apoio Gerencial da Coordenação</h3>
+		<h3>SENAI Prof. Stenio Lopes</h3>
+		<h4>Sistema de Apoio Gerencial da Coordenação</h4>
 	</div>
 	<div class="container" align="center">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">

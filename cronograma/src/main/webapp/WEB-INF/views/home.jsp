@@ -32,12 +32,13 @@
 <body>
  <div class="container" align="center">
 <img class="mb-4" src="${images}/logo.png" alt="" width="335" height="150">
-<h3>Sistema de Apoio Gerencial da Coordenação</h3>
-
+<h3>SENAI Prof. Stenio Lopes</h3>
+<h4>Sistema de Apoio Gerencial da Coordenação</h4>
+<br>
 <form class="form-signin" action="/cronograma/login" method="post">
   <div class="text-center mb-8">
    
-    <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+    <h1 class="h4 mb-3 font-weight-normal">Login</h1>
     
   </div>
 
@@ -55,7 +56,7 @@
   
  
 </form>
-<p class="mt-5 mb-3 text-muted text-center">&copy;SENAI Prof. Stenio Lopes - 2020 - v.1</p>
+<p class="mt-5 mb-3 text-muted text-center">&copy;Gleyser Guimarães - CFP SL - 2020 - v.1</p>
 </div>
 </body>
 </html>

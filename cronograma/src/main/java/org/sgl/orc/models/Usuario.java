@@ -1,6 +1,8 @@
 package org.sgl.orc.models;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,9 +13,11 @@ public class Usuario {
     private int id;
 	private String email;
 	private String senha;
-	private String cargo;
+	@Enumerated(EnumType.STRING)
+	private tipoCargo cargo;
 	private String nome;
-	private String setor;
+	@Enumerated(EnumType.STRING)
+	private tipoSetor setor;
 	
 	public String getEmail() {
 		return email;
@@ -27,24 +31,24 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getCargo() {
-		return cargo;
-	}
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
-	}
-	
-	
+		
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getSetor() {
+	
+	public tipoCargo getCargo() {
+		return cargo;
+	}
+	public void setCargo(tipoCargo cargo) {
+		this.cargo = cargo;
+	}
+	public tipoSetor getSetor() {
 		return setor;
 	}
-	public void setSetor(String setor) {
+	public void setSetor(tipoSetor setor) {
 		this.setor = setor;
 	}
 	@Override

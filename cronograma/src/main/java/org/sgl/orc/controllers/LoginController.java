@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.sgl.orc.daos.UsuarioDAO;
 import org.sgl.orc.models.Usuario;
+import org.sgl.orc.models.tipoCargo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +23,12 @@ public class LoginController {
 		if (!(usuarioRetornado == null)) {
 			// usuario existe, guardaremos ele na session
 			session.setAttribute("usuarioLogado", usuarioRetornado);
-			if (usuarioRetornado.getCargo().equals("Instrutor")) {
+			if (usuarioRetornado.getCargo().equals(tipoCargo.INSTRUTOR)) {
 				return "inicioInstrutor";
 
 			}
 
-			else if (usuarioRetornado.getCargo().equals("Coordenador")) {
+			else if (usuarioRetornado.getCargo().equals(tipoCargo.COORDENADOR)) {
 				return "inicioCoordenador";
 
 			}

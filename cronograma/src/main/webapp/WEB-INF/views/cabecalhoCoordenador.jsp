@@ -41,9 +41,11 @@
 <body>
 
 	<div class="container" align="center">
-		<img class="mb-4" src="images/logo.png" alt="" width="335"
+		<img class="mb-4" src="${images}/logo.png" alt="" width="335"
 			height="150">
-		<h3>Sistema de Apoio Gerencial da Coordenação</h3>
+		<h3>SENAI Prof. Stenio Lopes</h3>
+		<h4>Sistema de Apoio Gerencial da Coordenação</h4>
+		
 	</div>
 	<div class="container" align="center">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -56,6 +58,7 @@
 					</li>
 					<li class="nav-item"><a class="nav-link" href="#">Resumo</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Metas</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Calendário</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -70,8 +73,8 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Disciplinas </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Exibir disciplina</a> <a
-								class="dropdown-item" href="#">Criar nova disciplina</a>
+							<a class="dropdown-item" href="#">Exibir Unidade Curricular</a> <a
+								class="dropdown-item" href="disciplinas/form">Criar nova Unidade Curricular</a>
 						</div>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
