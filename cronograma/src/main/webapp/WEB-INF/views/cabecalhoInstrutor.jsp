@@ -60,9 +60,9 @@
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> Disciplinas </a>
+						aria-expanded="false"> Unidades Curriculares </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Exibir minhas disciplinas</a>
+							<a class="dropdown-item" href="#">Exibir minhas Unidades Curriculares</a>
 						</div>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
