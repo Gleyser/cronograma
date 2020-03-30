@@ -12,6 +12,8 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String cargo;
+	private String nome;
+	private String setor;
 	
 	public String getEmail() {
 		return email;
@@ -31,10 +33,27 @@ public class Usuario {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+	
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getSetor() {
+		return setor;
+	}
+	public void setSetor(String setor) {
+		this.setor = setor;
+	}
 	@Override
 	public String toString() {
-		return "Usuario [email=" + email + ", senha=" + senha + ", cargo=" + cargo + "]";
+		return "Usuario [id=" + id + ", email=" + email + ", senha=" + senha + ", cargo=" + cargo + ", nome=" + nome
+				+ ", setor=" + setor + "]";
 	}
+	
+	
 	
 	
 	

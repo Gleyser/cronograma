@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SGL - Sistema de Gerenciamento de Laboratórios</title>
+<title>SAGC - Sistema de Apoio Gerencial da Coordenação</title>
 <c:url value="/resources/css" var="cssPath" />
 <c:url value="/images" var="images" />
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css" />
@@ -32,7 +32,8 @@
 <body>
  <div class="container" align="center">
 <img class="mb-4" src="${images}/logo.png" alt="" width="335" height="150">
-<h3>Sistema de Gerenciamento de Laboratórios</h3>
+<h3>Sistema de Apoio Gerencial da Coordenação</h3>
+
 <form class="form-signin" action="/cronograma/login" method="post">
   <div class="text-center mb-8">
    
@@ -49,11 +50,12 @@
     <input type="password" name="senha" class="form-control" placeholder="Senha" required>
     <label for="inputPassword"></label>
   </div>
-  <br>
+  
   <button class="btn btn-lg btn-primary btn-block col-sm-3" type="submit">Entrar</button>
-  <p class="mt-5 mb-3 text-muted text-center">&copy; SENAI CEP Prof. Stênio Lopes - 2020</p>
+  
+ 
 </form>
-
+<p class="mt-5 mb-3 text-muted text-center">&copy;SENAI Prof. Stenio Lopes - 2020 - v.1</p>
 </div>
 </body>
 </html>
