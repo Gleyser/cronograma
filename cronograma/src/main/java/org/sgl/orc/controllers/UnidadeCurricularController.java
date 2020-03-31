@@ -26,8 +26,8 @@ public class UnidadeCurricularController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String salvaDisciplina(UnidadeCurricular disciplina) {
-		disciplinaoDao.gravar(disciplina);
-	    return "disciplinas/form";
+		disciplinaoDao.gravar(disciplina);		
+	    return "disciplinas/ok";
 
 	}
 

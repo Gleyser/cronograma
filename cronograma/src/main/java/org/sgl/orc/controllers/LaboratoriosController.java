@@ -24,7 +24,7 @@ public class LaboratoriosController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public String gravar(Laboratorio laboratorio){
-	    System.out.println(laboratorio); 
+	    //System.out.println(laboratorio); 
 	    laboratorioDao.gravar(laboratorio);
 	    return "/laboratorios/ok";
 	}
