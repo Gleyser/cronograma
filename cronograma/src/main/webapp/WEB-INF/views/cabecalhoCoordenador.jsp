@@ -45,7 +45,7 @@
 			height="150">
 		<h3>SENAI Prof. Stenio Lopes</h3>
 		<h4>Sistema de Apoio Gerencial da Coordenação</h4>
-		
+
 	</div>
 	<div class="container" align="center">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -64,17 +64,21 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Cursos </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Editar curso</a> <a
-								class="dropdown-item" href="#">Iniciar curso</a> <a
-								class="dropdown-item" href="#">Criar novo curso</a>
+							<a class="dropdown-item" href="cursos/iniciar">Iniciar curso</a> <a
+								class="dropdown-item" href="cursos/editar">Editar curso</a> <a
+								class="dropdown-item" href="cursos/inserir">Criar novo curso
+								modelo</a> <a class="dropdown-item" href="cursos/editarm">Editar
+								curso modelo</a>
 						</div>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Unidades Curriculares </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Editar Unidade Curricular</a> <a
-								class="dropdown-item" href="disciplinas/form">Criar nova Unidade Curricular</a>
+							<a class="dropdown-item" href="#">Editar unidade curricular</a> <a
+								class="dropdown-item" href="#">Editar unidade curricular
+								modelo</a> <a class="dropdown-item" href="disciplinas/form">Criar
+								nova unidade curricular modelo</a>
 						</div>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -85,18 +89,17 @@
 								class="dropdown-item" href="#">Inserir instrutor</a> <a
 								class="dropdown-item" href="#">Exibir instrutores</a>
 						</div>
-						<li class="nav-item dropdown"><a
+					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Solicitações </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="#">Reserva de laboratórios</a> <a
-								class="dropdown-item" href="#">Impressões e Livros</a> 
+								class="dropdown-item" href="#">Impressões e Livros</a>
 						</div>
-						<li class="nav-item"><a class="nav-link" href="#">Sair</a>
-					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Sair</a></li>
 				</ul>
-				
+
 			</div>
 		</nav>
 	</div>

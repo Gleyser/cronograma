@@ -17,13 +17,13 @@
             <label for="country">Módulo</label>
             <select class="custom-select d-block w-100" name="modulo" id="modulo" required>
               <option value="Básico">Básico</option>
-              <option value="EducParaTrabalho">EducParaTrabalho</option>
+              <option value="EducParaTrabalho">Educ. p/ trabalho</option>
               <option value="Introdutório">Introdutório</option>
               <option value="Específico">Específico</option>
-              <option value="Específico_I">Específico_I</option>
-              <option value="Específico_II">Específico_II</option>
-              <option value="Específico_III">Específico_III</option>
-              <option value="Específico_IV">Específico_IV</option>
+              <option value="Específico_I">Específico I</option>
+              <option value="Específico_II">Específico II</option>
+              <option value="Específico_III">Específico III</option>
+              <option value="Específico_IV">Específico IV</option>
               <option value="Único">Único</option>        
               
             </select>

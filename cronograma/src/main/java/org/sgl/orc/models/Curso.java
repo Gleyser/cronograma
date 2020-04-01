@@ -14,6 +14,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+/**
+ * @author Gleyser
+ *
+ */
 @Entity
 public class Curso {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -38,6 +42,7 @@ public class Curso {
 	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
 	@Column(name = "ehModelo", nullable = false)
 	private boolean ehModelo;
+	private int cargaHorariaTotal;
 	
 	public String getNome() {
 		return nome;
@@ -119,6 +124,14 @@ public class Curso {
 	public void removaModelo() {
 		this.ehModelo = false;
 	}
+	public int getCargaHorariaTotal() {
+		return cargaHorariaTotal;
+	}
+	public void setCargaHorariaTotal(int cargaHorariaTotal) {
+		this.cargaHorariaTotal = cargaHorariaTotal;
+	}
+	
+	
 	
 	
 
