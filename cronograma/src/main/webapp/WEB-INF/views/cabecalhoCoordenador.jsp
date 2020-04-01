@@ -64,7 +64,7 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Cursos </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Exibir curso</a> <a
+							<a class="dropdown-item" href="#">Editar curso</a> <a
 								class="dropdown-item" href="#">Iniciar curso</a> <a
 								class="dropdown-item" href="#">Criar novo curso</a>
 						</div>
@@ -73,7 +73,7 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Unidades Curriculares </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">Exibir Unidade Curricular</a> <a
+							<a class="dropdown-item" href="#">Editar Unidade Curricular</a> <a
 								class="dropdown-item" href="disciplinas/form">Criar nova Unidade Curricular</a>
 						</div>
 					<li class="nav-item dropdown"><a

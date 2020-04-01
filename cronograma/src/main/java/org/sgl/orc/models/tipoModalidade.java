@@ -1,0 +1,6 @@
+package org.sgl.orc.models;
+
+public enum tipoModalidade {
+APRENDIZAGEM_BÁSICA, APRENDIZAGEM_TÉCNICA, HAB_TEC_PAGO, HAB_TEC_GRATUITA, HAB_TEC_NEM, HAB_TEC_EAD_GRATUITO, HAB_TEC_EAD_PAGO
+
+}

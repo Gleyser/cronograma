@@ -2,6 +2,7 @@ package org.sgl.orc.models;
 
 import java.util.Calendar;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -10,6 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * @author Gleyser
+ *
+ */
 /**
  * @author Gleyser
  *
@@ -32,6 +37,9 @@ public class UnidadeCurricular {
 	private int aulaInicial;
 	private Calendar dataFinal;
 	private int aulaFinal;
+	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
+	@Column(name = "ehModelo", nullable = false)
+	private boolean ehModelo;
 	
 	
 	public Usuario getProfessor() {
@@ -106,6 +114,20 @@ public class UnidadeCurricular {
 	}
 	public void setAulaFinal(int aulaFinal) {
 		this.aulaFinal = aulaFinal;
+	}
+	public boolean isEhModelo() {
+		return ehModelo;
+	}
+	public void setEhModelo(boolean ehModelo) {
+		this.ehModelo = ehModelo;
+	}
+	
+	public void transformeEmModelo() {
+		this.ehModelo = true;
+	}
+	
+	public void removaModelo() {
+		this.ehModelo = false;
 	}
 	
 	
