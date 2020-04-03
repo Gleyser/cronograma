@@ -18,6 +18,8 @@ public class Usuario {
 	private String nome;
 	@Enumerated(EnumType.STRING)
 	private tipoSetor setor;
+	@Enumerated(EnumType.STRING)
+	private tipoContrato tipoDeContrato;
 	
 	public String getEmail() {
 		return email;
@@ -50,6 +52,19 @@ public class Usuario {
 	}
 	public void setSetor(tipoSetor setor) {
 		this.setor = setor;
+	}
+		
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public tipoContrato getTipoDeContrato() {
+		return tipoDeContrato;
+	}
+	public void setTipoDeContrato(tipoContrato tipoDeContrato) {
+		this.tipoDeContrato = tipoDeContrato;
 	}
 	@Override
 	public String toString() {
