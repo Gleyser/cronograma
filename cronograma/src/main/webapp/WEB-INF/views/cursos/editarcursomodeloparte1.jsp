@@ -9,15 +9,19 @@
 			<div class="row">
 				<div class="input-group">
 					<select class="custom-select" id="inputGroupSelect04"
-						aria-label="Selecione o curso modelo a ser editado">
-						<option selected>Choose...</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
+						aria-label="Selecione o curso modelo a ser editado" name="id" id="idDoCurso" required>
+						<option selected>Selecione o curso...</option>
+						<c:forEach items="${cursosModelos}" var="curso">
+						
+						<option value="${curso.id}">${curso.nome} com a modalidade ${curso.modalidade} </option>
+						
+						</c:forEach>
+						
 					</select>
 					<div class="input-group-append">
-						<button class="btn btn-outline-secondary" type="button">Buscar</button>
+						<button class="btn btn-outline-secondary" type="submit">Buscar</button>
 					</div>
 				</div>
+			</div>
 		</form>
 	</div>

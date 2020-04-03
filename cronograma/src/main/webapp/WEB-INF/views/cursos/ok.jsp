@@ -1,15 +1,16 @@
 <%@ include file="/WEB-INF/views/cabecalhoCoordenador.jsp" %>
-<div class="container" align="center">
- <h1 class="h4 mb-3 font-weight-normal">Inserir novo curso modelo no sistema</h1>
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+ <div class="alert alert-success alert-dismissible fade show" role="alert">
  Curso modelo cadastrado com sucesso!
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 
+<div class="container" align="center">
+ <h1 class="h4 mb-3 font-weight-normal">Inserir novo curso modelo no sistema</h1>
 <div class="col-md-8 order-md-1">      
-      <form class="needs-validation" novalidate action="/cronograma/cursos" method="post">
+      <form class="needs-validation" novalidate action="salvarcursomodelo" method="post">
        <div class="mb-3">
           <label for="address">Nome</label>
           <input type="text" class="form-control" name="nome" id="nome" required>
