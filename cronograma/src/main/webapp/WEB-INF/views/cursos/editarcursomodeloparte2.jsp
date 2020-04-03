@@ -3,76 +3,107 @@
 	<h1 class="h4 mb-3 font-weight-normal">Editar curso modelo no
 		sistema</h1>
 
-	<div class="col-md-8 order-md-1">      
-      <form class="needs-validation" novalidate action="salvarcursomodelo" method="post">
-       <div class="mb-3">
-          <label for="address">Nome</label>
-          <input type="text" class="form-control" name="nome" id="nome" required>
-          <div class="invalid-feedback">
-           O nome do curso é obrigatório
-          </div>
-        </div>       
+	<div class="col-md-8 order-md-1">
+		<form class="needs-validation" novalidate action="salvarcursomodelo"
+			method="post">
+			<div class="mb-3">
+				<label for="address">Nome</label> <input type="text"
+					class="form-control" name="nome" id="nome" required>
+				<div class="invalid-feedback">O nome do curso é obrigatório</div>
+			</div>
 
-        <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="country">Modalidade</label>
-            <select class="custom-select d-block w-100" name="modalidade" id="modalidade" required>
-              <option value="APRENDIZAGEM_BÁSICA">Aprendizagem básica</option>
-              <option value="APRENDIZAGEM_TÉCNICA">Aprendizagem técnica</option>
-              <option value="HAB_TEC_PAGO">Habilitação técnica paga</option>
-              <option value="HAB_TEC_GRATUITA">Habilitação técnica gratuita</option>
-              <option value="HAB_TEC_NEM">Habilitação técnica - novo EM</option>
-              <option value="HAB_TEC_EAD_GRATUITO">Habilitação técnica gratuita - EAD</option>
-              <option value="HAB_TEC_EAD_PAGO">Habilitação técnica paga - EAD</option>               
-              
-            </select>
-            <div class="invalid-feedback">
-              Selecione a modalidade
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-3">
-            <label for="country">Setor responsável</label>
-            <select class="custom-select d-block w-100" name="setor" id="setor" required>
-              <option value="ALIMENTOS">Alimentos</option>
-              <option value="AUTOMAÇÃO">Automação</option>
-              <option value="ELETROELETRÔNICA">Eletroeletrônica</option>
-              <option value="GESTÃO">Gestão</option>
-              <option value="GRÁFICA">Gráfica</option>
-              <option value="REFRIGERAÇÃO">Refrigeração</option>
-              <option value="METALMECÂNICA">MetalMecânica</option>
-              <option value="TI">TI</option>
-                 
-              
-            </select>
-            <div class="invalid-feedback">
-              Selecione o setor responsável
-            </div>
-          </div> 
-          
-               
-          <div class="col-md-3 mb-3">
-            <label>Carga horária total</label>
-            <input type="text" class="form-control" name="cargaHorariaTotal" id="cargaHorariaTotal" placeholder="" required>
-            <div class="invalid-feedback">
-              Carga horária total é obrigatório.
-            </div>
-          </div>  
-          
-          </div>         
-          
-        <br>
-        
-        <h1 class="h4 mb-3 font-weight-normal">Editar as unidades curriculares desse curso:</h1>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <button class="btn btn-lg btn-primary btn-block col-sm-3" type="submit">Salvar curso</button>
-      </form>
-    </div>
+			<div class="row">
+				<div class="col-md-5 mb-3">
+					<label for="country">Modalidade</label> <select
+						class="custom-select d-block w-100" name="modalidade"
+						id="modalidade" required>
+						<option value="APRENDIZAGEM_BÁSICA">Aprendizagem básica</option>
+						<option value="APRENDIZAGEM_TÉCNICA">Aprendizagem técnica</option>
+						<option value="HAB_TEC_PAGO">Habilitação técnica paga</option>
+						<option value="HAB_TEC_GRATUITA">Habilitação técnica
+							gratuita</option>
+						<option value="HAB_TEC_NEM">Habilitação técnica - novo EM</option>
+						<option value="HAB_TEC_EAD_GRATUITO">Habilitação técnica
+							gratuita - EAD</option>
+						<option value="HAB_TEC_EAD_PAGO">Habilitação técnica paga
+							- EAD</option>
+
+					</select>
+					<div class="invalid-feedback">Selecione a modalidade</div>
+				</div>
+
+				<div class="col-md-4 mb-3">
+					<label for="country">Setor responsável</label> <select
+						class="custom-select d-block w-100" name="setor" id="setor"
+						required>
+						<option value="ALIMENTOS">Alimentos</option>
+						<option value="AUTOMAÇÃO">Automação</option>
+						<option value="ELETROELETRÔNICA">Eletroeletrônica</option>
+						<option value="GESTÃO">Gestão</option>
+						<option value="GRÁFICA">Gráfica</option>
+						<option value="REFRIGERAÇÃO">Refrigeração</option>
+						<option value="METALMECÂNICA">MetalMecânica</option>
+						<option value="TI">TI</option>
+
+
+					</select>
+					<div class="invalid-feedback">Selecione o setor responsável</div>
+				</div>
+
+
+				<div class="col-md-3 mb-3">
+					<label>Carga horária total</label> <input type="text"
+						class="form-control" name="cargaHorariaTotal"
+						id="cargaHorariaTotal" placeholder="" required>
+					<div class="invalid-feedback">Carga horária total é
+						obrigatório.</div>
+				</div>
+
+			</div>
+
+			<br>
+
+			<h1 class="h4 mb-3 font-weight-normal">Editar as unidades
+				curriculares desse curso:</h1>
+
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">Nome da UC</th>
+						<th scope="col">Carga Horária</th>
+						<th scope="col">Módulo</th>
+						<th scope="col">Avaliações</th>
+						<th scope="col">Selecionar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Informática Aplicada</th>
+						<td>40</td>
+						<td>Básico</td>
+						<td>3</td>
+						<td><div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    
+  </div></td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+						<td>@mdo</td>
+					</tr>
+					
+				</tbody>
+			</table>
+
+
+
+
+
+
+			<button class="btn btn-lg btn-primary btn-block col-sm-3"
+				type="submit">Salvar curso</button>
+		</form>
+	</div>
