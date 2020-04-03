@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/views/cabecalhoCoordenador.jsp"%>
 <div class="container" align="center">
-	<h1 class="h4 mb-3 font-weight-normal">Editar curso modelo no
+	<h1 class="h4 mb-3 font-weight-normal">Selecionar curso modelo no
 		sistema</h1>
 
 	<div class="col-md-8 order-md-1">

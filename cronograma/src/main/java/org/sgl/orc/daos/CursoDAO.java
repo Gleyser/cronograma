@@ -30,4 +30,8 @@ public class CursoDAO {
 		return manager.createQuery("select p from Curso p where p.ehModelo = 1", Curso.class).getResultList();
 	}
 
+	public Curso getCurso(Long id) {
+		return manager.createQuery("select p from Curso p where p.id =" +  id.toString(), Curso.class).getSingleResult();
+	}
+
 }
