@@ -65,7 +65,7 @@
 						aria-expanded="false"> Cursos </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="iniciarcurso">Iniciar curso</a> <a
-								class="dropdown-item" href="editarcurso">Editar curso</a> <a
+								class="dropdown-item" href="editarcurso">Editar curso em andamento</a> <a
 								class="dropdown-item" href="editarcursomodelo">Editar curso
 								modelo</a> <a class="dropdown-item" href="inserircursomodelo">Inserir
 								novo curso modelo</a>
@@ -86,9 +86,10 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> Usuários </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							< <a class="dropdown-item" href="#">Inserir instrutor</a> <a
-								class="dropdown-item" href="#">Exibir instrutores</a> a
-							class="dropdown-item" href="#">Inserir coordenador</a>
+							 <a
+								class="dropdown-item" href="#">Inserir instrutor</a> <a
+								class="dropdown-item" href="#">Exibir instrutores</a>
+								<a class="dropdown-item" href="#">Inserir coordenador</a>
 						</div>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -98,7 +99,7 @@
 							<a class="dropdown-item" href="#">Reserva de laboratórios</a> <a
 								class="dropdown-item" href="#">Impressões e Livros</a>
 						</div>
-					<li class="nav-item"><a class="nav-link" href="">Sair</a></li>
+					<li class="nav-item"><a class="nav-link" href="sair">Sair</a></li>
 				</ul>
 
 			</div>

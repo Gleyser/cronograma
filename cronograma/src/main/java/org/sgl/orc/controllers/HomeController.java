@@ -7,8 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	@RequestMapping("/")
-    public String index(){
-        System.out.println("Entrando na home do SGL");
+    public String entrar(){
+        //Entrando na home do sistema
+        return "home";
+    }
+	
+	@RequestMapping("sair")
+    public String sair(){
+        //Voltando para a home do sistema
         return "home";
     }
 

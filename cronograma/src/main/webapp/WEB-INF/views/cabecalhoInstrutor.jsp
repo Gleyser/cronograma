@@ -79,7 +79,7 @@
 							<a class="dropdown-item" href="#">Reservar laboratório</a> <a
 								class="dropdown-item" href="#">Solicitar impressões e livros</a> 
 						</div>
-						<li class="nav-item"><a class="nav-link" href="#">Sair</a>
+						<li class="nav-item"><a class="nav-link" href="sair">Sair</a>
 					</li>
 				</ul>
 			</div>
