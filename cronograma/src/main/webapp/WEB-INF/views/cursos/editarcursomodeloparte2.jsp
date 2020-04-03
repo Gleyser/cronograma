@@ -83,9 +83,10 @@
 						<td>Básico</td>
 						<td>3</td>
 						<td><div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    
-  </div></td>
+								<input type="checkbox" class="form-check-input"
+									id="exampleCheck1">
+
+							</div></td>
 					</tr>
 					<tr>
 						<th scope="row">2</th>
@@ -94,7 +95,7 @@
 						<td>@fat</td>
 						<td>@mdo</td>
 					</tr>
-					
+
 				</tbody>
 			</table>
 
