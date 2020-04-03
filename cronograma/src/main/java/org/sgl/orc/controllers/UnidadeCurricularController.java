@@ -13,18 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("disciplinas")
 public class UnidadeCurricularController {
 	
 	@Autowired
     private UnidadeCurricularDAO disciplinaoDao;
 	
-	@RequestMapping("/form")
+	@RequestMapping("inserirunidadecurricularmodelo")
     public String form(){
         return "disciplinas/form";
     }
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "cadastrarunidadecurricular", method = RequestMethod.POST)
 	public String salvaDisciplina(UnidadeCurricular disciplina) {
 		disciplinaoDao.gravar(disciplina);		
 	    return "disciplinas/ok";

@@ -35,7 +35,7 @@
 <h3>SENAI Prof. Stenio Lopes</h3>
 <h4>Sistema de Apoio Gerencial da Coordenação</h4>
 <br>
-<form class="form-signin" action="/cronograma/login" method="post">
+<form class="form-signin" action="inicio" method="post">
   <div class="text-center mb-8">
    
     <h1 class="h4 mb-3 font-weight-normal">Login</h1>

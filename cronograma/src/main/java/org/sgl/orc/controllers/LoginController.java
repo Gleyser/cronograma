@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("login")
 public class LoginController {
 
 	@Autowired
 	private UsuarioDAO usuarioDao;
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "inicio", method = RequestMethod.POST)
 	public String efetuaLogin(Usuario usuario, HttpSession session) {
 		Usuario usuarioRetornado = usuarioDao.retornaUsuarioSalvo(usuario);
 		if (!(usuarioRetornado == null)) {
@@ -32,7 +31,6 @@ public class LoginController {
 				return "inicioCoordenador";
 
 			}
-
 			
 		}
 		

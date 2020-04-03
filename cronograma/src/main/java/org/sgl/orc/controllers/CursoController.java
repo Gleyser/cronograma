@@ -10,18 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("cursos")
 public class CursoController {
 	
 	@Autowired
     private CursoDAO cursoDao;
 	
-	@RequestMapping("/inserir")
+	@RequestMapping("inserircursomodelo")
     public String form(){
         return "cursos/inserir";
     }
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "salvarcursomodelo",method = RequestMethod.POST)
 	public String salvaCursoModelo(Curso curso) {
 		curso.transformeEmModelo();
 		cursoDao.gravar(curso);		
