@@ -43,6 +43,7 @@ public class Curso {
 	@Column(name = "ehModelo", nullable = false)
 	private boolean ehModelo;
 	private int cargaHorariaTotal;
+	private int numAlunos;
 	
 	public String getNome() {
 		return nome;
@@ -136,6 +137,14 @@ public class Curso {
 	public void setId(int id) {
 		this.id = id;
 	}
+	public int getNumAlunos() {
+		return numAlunos;
+	}
+	public void setNumAlunos(int numAlunos) {
+		this.numAlunos = numAlunos;
+	}
+	
+	
 	
 	
 	

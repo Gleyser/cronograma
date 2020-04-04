@@ -44,7 +44,7 @@ public class CursoController {
 	public ModelAndView salvaCursoModelo(Long id) {
 		Curso cursoModelo = cursoDao.getCurso(id);
 		ModelAndView modelAndView = new ModelAndView("cursos/editarcursomodeloparte2");
-	    modelAndView.addObject("cursosModelos", cursoModelo);
+	    modelAndView.addObject("cursosModelo", cursoModelo);
 		return modelAndView;
 		
 	}

@@ -52,12 +52,27 @@
 			<div class="collapse navbar-collapse" id="navbarNavDropdown"
 				align="center">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item"><a class="nav-link" href="#">Início <span
+				<li class="nav-item"><a class="nav-link" href="#">Início <span
 							class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Cronograma</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Resumo</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Metas</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Resumo</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Metas</a></li>					
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> Cronograma </a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Alimentos</a> 
+							<a class="dropdown-item" href="#">Automação</a> 
+							<a class="dropdown-item" href="#">Eletroeletrônica</a> 
+							<a class="dropdown-item" href="#">Gráfica</a>
+							<a class="dropdown-item" href="#">Gestão</a>
+							<a class="dropdown-item" href="#">Metalmecânica</a>
+							<a class="dropdown-item" href="#">Refrigeração</a>
+							<a class="dropdown-item" href="#">Tecnologia da Informação</a>
+						</div>
+					<li class="nav-item"><a class="nav-link" href="#">Pendências</a>
+					</li>					
+					
 					<li class="nav-item"><a class="nav-link" href="#">Calendário</a></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
