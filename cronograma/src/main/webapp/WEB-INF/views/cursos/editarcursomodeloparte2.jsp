@@ -104,7 +104,15 @@
 					<label for="country">Setor responsável</label> <select
 						class="custom-select d-block w-100" name="setor" id="setor"
 						required>
-						<option value="ALIMENTOS">Alimentos</option>
+						<%-- Alimentos --%>
+						<c:if test="${cursosModelo.setor eq 'ALIMENTOS'}">
+							<option selected value="ALIMENTOS">Alimentos</option>
+						</c:if>
+
+						<c:if test="${cursosModelo.setor ne 'ALIMENTOS'}">
+							<option value="ALIMENTOS">Alimentos</option>
+						</c:if>
+							
 						<option value="AUTOMAÇÃO">Automação</option>
 						<option value="ELETROELETRÔNICA">Eletroeletrônica</option>
 						<option value="GESTÃO">Gestão</option>
@@ -132,7 +140,7 @@
 
 			<br>
 
-			<h1 class="h4 mb-3 font-weight-normal">Unidades curriculares do
+			<h1 class="h4 mb-3 font-weight-normal">Remover unidades curriculares do
 				curso:</h1>
 
 			<table class="table table-hover">
@@ -170,7 +178,7 @@
 
 			<br>
 
-			<h1 class="h4 mb-3 font-weight-normal">Inserir novas unidades
+			<h1 class="h4 mb-3 font-weight-normal">Inserir unidades
 				curriculares no curso:</h1>
 
 			<table class="table table-hover">
