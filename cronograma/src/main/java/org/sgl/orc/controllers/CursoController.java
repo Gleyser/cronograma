@@ -18,6 +18,9 @@ public class CursoController {
 	@Autowired
     private CursoDAO cursoDao;
 	
+	@Autowired
+    private UnidadeCurricularDAO disciplinaoDao;
+	
 	@RequestMapping("inserircursomodelo")
     public String form(){
         return "cursos/inserir";
@@ -35,7 +38,7 @@ public class CursoController {
 		List<Curso> cursosModelos = cursoDao.getCursosModelos();
 		ModelAndView modelAndView = new ModelAndView("cursos/editarcursomodeloparte1");
 	    modelAndView.addObject("cursosModelos", cursosModelos);
-		return modelAndView;
+	    return modelAndView;
 		
 
 	}
@@ -45,6 +48,8 @@ public class CursoController {
 		Curso cursoModelo = cursoDao.getCurso(id);
 		ModelAndView modelAndView = new ModelAndView("cursos/editarcursomodeloparte2");
 	    modelAndView.addObject("cursosModelo", cursoModelo);
+	    List<UnidadeCurricular> listaDeUcModelo = disciplinaoDao.getUnidadesCurricularesModelo();
+	    modelAndView.addObject("ucsModelos", listaDeUcModelo);
 		return modelAndView;
 		
 	}

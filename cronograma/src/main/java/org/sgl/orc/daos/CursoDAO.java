@@ -32,6 +32,6 @@ public class CursoDAO {
 
 	public Curso getCurso(Long id) {
 		return manager.createQuery("select p from Curso p where p.id =" +  id.toString(), Curso.class).getSingleResult();
-	}
+	}	
 
 }

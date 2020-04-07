@@ -25,6 +25,7 @@ public class UnidadeCurricularController {
 	
 	@RequestMapping(value = "cadastrarunidadecurricular", method = RequestMethod.POST)
 	public String salvaDisciplina(UnidadeCurricular disciplina) {
+		disciplina.transformeEmModelo();
 		disciplinaoDao.gravar(disciplina);		
 	    return "disciplinas/ok";
 
