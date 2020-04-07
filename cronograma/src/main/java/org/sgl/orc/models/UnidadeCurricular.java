@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 
 /**
  * @author Gleyser
@@ -25,6 +26,7 @@ public class UnidadeCurricular {
     private int id;	
 	@ManyToOne
 	private Usuario professor;
+	@OrderBy ("nome ASC")
 	private String nome;
 	@Enumerated(EnumType.STRING)
 	private tipoModulo modulo;
