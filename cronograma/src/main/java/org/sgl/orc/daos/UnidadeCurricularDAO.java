@@ -26,7 +26,7 @@ public class UnidadeCurricularDAO {
 	}
 	
 	public List<UnidadeCurricular> getUnidadesCurricularesModelo(){
-		return manager.createQuery("select p from UnidadeCurricular p where p.ehModelo = 1", UnidadeCurricular.class).getResultList();
+		return manager.createQuery("select p from UnidadeCurricular p where p.ehModelo = 1 order by p.nome", UnidadeCurricular.class).getResultList();
 	}
 
 	
