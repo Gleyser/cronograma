@@ -131,6 +131,20 @@ public class UnidadeCurricular {
 	public void removaModelo() {
 		this.ehModelo = false;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@Override
+	public String toString() {
+		return "UnidadeCurricular [id=" + id + ", professor=" + professor + ", nome=" + nome + ", modulo=" + modulo
+				+ ", sala=" + sala + ", observacoes=" + observacoes + ", node=" + node + ", cargaHoraria="
+				+ cargaHoraria + ", numAvaliacoes=" + numAvaliacoes + ", dataInicio=" + dataInicio + ", aulaInicial="
+				+ aulaInicial + ", dataFinal=" + dataFinal + ", aulaFinal=" + aulaFinal + ", ehModelo=" + ehModelo
+				+ "]";
+	}
 	
 	
 	

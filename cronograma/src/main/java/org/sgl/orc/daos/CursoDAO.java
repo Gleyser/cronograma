@@ -1,5 +1,6 @@
 package org.sgl.orc.daos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -22,8 +23,15 @@ public class CursoDAO {
 		manager.persist(curso);
     }
 	
-	public List<Curso> recuperarCurso(){
+	public List<Curso> recuperarCursos(){
 	    return manager.createQuery("select p from Curso p", Curso.class).getResultList();
+	}
+	
+	public void transformaCursosModelo(){
+	    for (Curso c : manager.createQuery("select p from Curso p", Curso.class).getResultList()) {
+	    	c.transformeEmModelo();
+	    	manager.merge(c);
+	    }
 	}
 
 	public List<Curso> getCursosModelos() {
@@ -32,6 +40,21 @@ public class CursoDAO {
 
 	public Curso getCurso(Long id) {
 		return manager.createQuery("select p from Curso p where p.id =" +  id.toString(), Curso.class).getSingleResult();
+	}	
+	
+	public void atualizaCurso(Curso curso) {
+		manager.merge(curso);
+	}
+
+	public List<UnidadeCurricular> getUCDoCurso(int id) {
+		List<UnidadeCurricular> retorno = new ArrayList<UnidadeCurricular>();
+		Curso curso = manager.find(Curso.class, id);
+		if (curso.getDisciplinas() != null) {
+			for (UnidadeCurricular uc : curso.getDisciplinas()) {
+				retorno.add(uc);
+			}
+		}		
+		return retorno;
 	}	
 
 }

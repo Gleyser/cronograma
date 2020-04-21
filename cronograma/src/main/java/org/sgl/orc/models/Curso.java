@@ -3,6 +3,7 @@ package org.sgl.orc.models;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -37,7 +38,7 @@ public class Curso {
 	private tipoSetor setor;
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<tipoDiaDaSemana> diasDeAula;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<UnidadeCurricular> disciplinas;
 	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
 	@Column(name = "ehModelo", nullable = false)
@@ -142,6 +143,14 @@ public class Curso {
 	}
 	public void setNumAlunos(int numAlunos) {
 		this.numAlunos = numAlunos;
+	}
+	
+	public void addDisciplina(UnidadeCurricular uc) {
+		this.disciplinas.add(uc);
+	}
+	
+	public void removeDisciplina(UnidadeCurricular uc) {
+		// to do
 	}
 	
 	

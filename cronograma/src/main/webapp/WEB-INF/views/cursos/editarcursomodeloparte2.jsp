@@ -3,12 +3,25 @@
 	<h1 class="h4 mb-3 font-weight-normal">Editar curso modelo no
 		sistema</h1>
 
+	<c:if test="${cadastrado eq true}">
+
+		<div class="alert alert-success alert-dismissible fade show"
+			role="alert">
+			Curso modelo cadastrado com sucesso!
+			<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+	</c:if>
+
 	<div class="col-md-8 order-md-1">
 		<form class="needs-validation" novalidate action="editarcursomodelo"
 			method="post">
-			
-			<input type="hidden" name="id" value="${cursosModelo.id}"/>	
-							
+
+			<input type="hidden" name="id" value="${cursosModelo.id}" />
+
 			<div class="mb-3">
 				<label for="address">Nome</label> <input type="text"
 					class="form-control" name="nome" id="nome"
@@ -23,34 +36,42 @@
 						id="modalidade" required>
 
 						<%-- aprendizagem básica --%>
-						<option value="APRENDIZAGEM_BÁSICA" ${cursosModelo.modalidade eq 'APRENDIZAGEM_BÁSICA' ? 'selected':''}>Aprendizagem
-								básica</option>							
+						<option value="APRENDIZAGEM_BÁSICA"
+							${cursosModelo.modalidade eq 'APRENDIZAGEM_BÁSICA' ? 'selected':''}>Aprendizagem
+							básica</option>
 
 						<%-- aprendizagem técnica --%>
-						<option value="APRENDIZAGEM_TÉCNICA" ${cursosModelo.modalidade eq 'APRENDIZAGEM_TÉCNICA' ? 'selected':''}>Aprendizagem
-								técnica</option>													
-																
+						<option value="APRENDIZAGEM_TÉCNICA"
+							${cursosModelo.modalidade eq 'APRENDIZAGEM_TÉCNICA' ? 'selected':''}>Aprendizagem
+							técnica</option>
+
 						<%-- habilitação técnica paga --%>
-						<option value="HAB_TEC_PAGO" ${cursosModelo.modalidade eq 'HAB_TEC_PAGO' ? 'selected':''}>Habilitação técnica paga</option>													
-												
+						<option value="HAB_TEC_PAGO"
+							${cursosModelo.modalidade eq 'HAB_TEC_PAGO' ? 'selected':''}>Habilitação
+							técnica paga</option>
+
 						<%-- habilitação técnica gratuita --%>
-						<option value="HAB_TEC_GRATUITA" ${cursosModelo.modalidade eq 'HAB_TEC_GRATUITA' ? 'selected':''}>Habilitação
-								técnica gratuita</option>													
+						<option value="HAB_TEC_GRATUITA"
+							${cursosModelo.modalidade eq 'HAB_TEC_GRATUITA' ? 'selected':''}>Habilitação
+							técnica gratuita</option>
 
 						<%-- Habilitação técnica - novo EM --%>
-						<option value="HAB_TEC_NEM" ${cursosModelo.modalidade eq 'HAB_TEC_NEM' ? 'selected':''}>Habilitação técnica
-								- novo EM</option>	
-									
+						<option value="HAB_TEC_NEM"
+							${cursosModelo.modalidade eq 'HAB_TEC_NEM' ? 'selected':''}>Habilitação
+							técnica - novo EM</option>
+
 						<%-- Habilitação técnica
 							gratuita - EAD --%>
-						<option value="HAB_TEC_EAD_GRATUITO" ${cursosModelo.modalidade eq 'HAB_TEC_EAD_GRATUITO' ? 'selected':''}>Habilitação
-								técnica gratuita - EAD</option>	
-						
+						<option value="HAB_TEC_EAD_GRATUITO"
+							${cursosModelo.modalidade eq 'HAB_TEC_EAD_GRATUITO' ? 'selected':''}>Habilitação
+							técnica gratuita - EAD</option>
+
 						<%-- Habilitação técnica paga
 							- EAD --%>
-						<option value="HAB_TEC_EAD_PAGO" ${cursosModelo.modalidade eq 'HAB_TEC_EAD_PAGO' ? 'selected':''}>Habilitação
-								técnica paga - EAD</option>				
-						
+						<option value="HAB_TEC_EAD_PAGO"
+							${cursosModelo.modalidade eq 'HAB_TEC_EAD_PAGO' ? 'selected':''}>Habilitação
+							técnica paga - EAD</option>
+
 					</select>
 					<div class="invalid-feedback">Selecione a modalidade</div>
 				</div>
@@ -58,32 +79,39 @@
 				<div class="col-md-4 mb-3">
 					<label for="country">Setor responsável</label> <select
 						class="custom-select d-block w-100" name="setor" id="setor"
-						required>						
-						
+						required>
+
 						<%-- Alimentos --%>
 						<%-- habilitação técnica paga --%>
-						<option value="ALIMENTOS" ${cursosModelo.setor eq 'ALIMENTOS' ? 'selected':''}>Alimentos</option>	
-								
+						<option value="ALIMENTOS"
+							${cursosModelo.setor eq 'ALIMENTOS' ? 'selected':''}>Alimentos</option>
+
 						<%-- Automação --%>
-						<option value="AUTOMAÇÃO" ${cursosModelo.setor eq 'AUTOMAÇÃO' ? 'selected':''}>Automação</option>	
-						
+						<option value="AUTOMAÇÃO"
+							${cursosModelo.setor eq 'AUTOMAÇÃO' ? 'selected':''}>Automação</option>
+
 						<%-- Eletroeletrônica --%>
-						<option value="ELETROELETRÔNICA" ${cursosModelo.setor eq 'ELETROELETRÔNICA' ? 'selected':''}>Eletroeletrônica</option>	
-						
+						<option value="ELETROELETRÔNICA"
+							${cursosModelo.setor eq 'ELETROELETRÔNICA' ? 'selected':''}>Eletroeletrônica</option>
+
 						<%-- Gestão --%>
-						<option value="GESTÃO" ${cursosModelo.setor eq 'GESTÃO' ? 'selected':''}>Gestão</option>	
-						
+						<option value="GESTÃO"
+							${cursosModelo.setor eq 'GESTÃO' ? 'selected':''}>Gestão</option>
+
 						<%-- Gráfica --%>
-						<option value="GRÁFICA" ${cursosModelo.setor eq 'GRÁFICA' ? 'selected':''}>Gráfica</option>
-						
+						<option value="GRÁFICA"
+							${cursosModelo.setor eq 'GRÁFICA' ? 'selected':''}>Gráfica</option>
+
 						<%-- Refrigeração --%>
-						<option value="REFRIGERAÇÃO" ${cursosModelo.setor eq 'REFRIGERAÇÃO' ? 'selected':''}>Refrigeração</option>
-						
+						<option value="REFRIGERAÇÃO"
+							${cursosModelo.setor eq 'REFRIGERAÇÃO' ? 'selected':''}>Refrigeração</option>
+
 						<%-- MetalMecânica --%>
-						<option value="METALMECÂNICA" ${cursosModelo.setor eq 'METALMECÂNICA' ? 'selected':''}>MetalMecânica</option>
-						
+						<option value="METALMECÂNICA"
+							${cursosModelo.setor eq 'METALMECÂNICA' ? 'selected':''}>MetalMecânica</option>
+
 						<%-- TI --%>
-						<option value="TI" ${cursosModelo.setor eq 'TI' ? 'selected':''}>TI</option>			
+						<option value="TI" ${cursosModelo.setor eq 'TI' ? 'selected':''}>TI</option>
 
 					</select>
 					<div class="invalid-feedback">Selecione o setor responsável</div>
@@ -155,7 +183,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					
+
 					<c:forEach items="${ucsModelos}" var="uc">
 						<tr>
 							<th scope="row">${uc.nome}</th>
@@ -164,9 +192,11 @@
 							<td>${uc.numAvaliacoes}</td>
 							<td><div class="form-group form-check">
 									<input type="checkbox" class="form-check-input"
-										id="${uc.numAvaliacoes}" name="id" value="${uc.numAvaliacoes}">
+										name="inserirIds" value="${uc.id}">
 
 								</div></td>
+
+
 						</tr>
 					</c:forEach>
 
