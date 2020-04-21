@@ -4,8 +4,11 @@
 		sistema</h1>
 
 	<div class="col-md-8 order-md-1">
-		<form class="needs-validation" novalidate action="salvarcursomodelo"
+		<form class="needs-validation" novalidate action="editarcursomodelo"
 			method="post">
+			
+			<input type="hidden" name="id" value="${cursosModelo.id}"/>	
+							
 			<div class="mb-3">
 				<label for="address">Nome</label> <input type="text"
 					class="form-control" name="nome" id="nome"
@@ -20,82 +23,34 @@
 						id="modalidade" required>
 
 						<%-- aprendizagem básica --%>
-						<c:if test="${cursosModelo.modalidade eq 'APRENDIZAGEM_BÁSICA'}">
-							<option selected value="APRENDIZAGEM_BÁSICA">Aprendizagem
-								básica</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.modalidade ne 'APRENDIZAGEM_BÁSICA'}">
-							<option value="APRENDIZAGEM_BÁSICA">Aprendizagem básica</option>
-						</c:if>
+						<option value="APRENDIZAGEM_BÁSICA" ${cursosModelo.modalidade eq 'APRENDIZAGEM_BÁSICA' ? 'selected':''}>Aprendizagem
+								básica</option>							
 
 						<%-- aprendizagem técnica --%>
-						<c:if test="${cursosModelo.modalidade eq 'APRENDIZAGEM_TÉCNICA'}">
-							<option selected value="APRENDIZAGEM_TÉCNICA">Aprendizagem
-								técnica</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.modalidade ne 'APRENDIZAGEM_TÉCNICA'}">
-							<option value="APRENDIZAGEM_TÉCNICA">Aprendizagem
-								técnica</option>
-						</c:if>
-
+						<option value="APRENDIZAGEM_TÉCNICA" ${cursosModelo.modalidade eq 'APRENDIZAGEM_TÉCNICA' ? 'selected':''}>Aprendizagem
+								técnica</option>													
+																
 						<%-- habilitação técnica paga --%>
-						<c:if test="${cursosModelo.modalidade eq 'HAB_TEC_PAGO'}">
-							<option selected value="HAB_TEC_PAGO">Habilitação
-								técnica paga</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.modalidade ne 'HAB_TEC_PAGO'}">
-							<option value="HAB_TEC_PAGO">Habilitação técnica paga</option>
-						</c:if>
-
+						<option value="HAB_TEC_PAGO" ${cursosModelo.modalidade eq 'HAB_TEC_PAGO' ? 'selected':''}>Habilitação técnica paga</option>													
+												
 						<%-- habilitação técnica gratuita --%>
-						<c:if test="${cursosModelo.modalidade eq 'HAB_TEC_GRATUITA'}">
-							<option selected value="HAB_TEC_GRATUITA">Habilitação
-								técnica gratuita</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.modalidade ne 'HAB_TEC_GRATUITA'}">
-							<option value="HAB_TEC_GRATUITA">Habilitação técnica
-								gratuita</option>
-						</c:if>
+						<option value="HAB_TEC_GRATUITA" ${cursosModelo.modalidade eq 'HAB_TEC_GRATUITA' ? 'selected':''}>Habilitação
+								técnica gratuita</option>													
 
 						<%-- Habilitação técnica - novo EM --%>
-						<c:if test="${cursosModelo.modalidade eq 'HAB_TEC_NEM'}">
-							<option selected value="HAB_TEC_NEM">Habilitação técnica
-								- novo EM</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.modalidade ne 'HAB_TEC_NEM'}">
-							<option value="HAB_TEC_NEM">Habilitação técnica - novo
-								EM</option>
-						</c:if>
-
+						<option value="HAB_TEC_NEM" ${cursosModelo.modalidade eq 'HAB_TEC_NEM' ? 'selected':''}>Habilitação técnica
+								- novo EM</option>	
+									
 						<%-- Habilitação técnica
 							gratuita - EAD --%>
-						<c:if test="${cursosModelo.modalidade eq 'HAB_TEC_EAD_GRATUITO'}">
-							<option selected value="HAB_TEC_EAD_GRATUITO">Habilitação
-								técnica gratuita - EAD</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.modalidade ne 'HAB_TEC_EAD_GRATUITO'}">
-							<option value="HAB_TEC_EAD_GRATUITO">Habilitação técnica
-								gratuita - EAD</option>
-						</c:if>
-
+						<option value="HAB_TEC_EAD_GRATUITO" ${cursosModelo.modalidade eq 'HAB_TEC_EAD_GRATUITO' ? 'selected':''}>Habilitação
+								técnica gratuita - EAD</option>	
+						
 						<%-- Habilitação técnica paga
 							- EAD --%>
-						<c:if test="${cursosModelo.modalidade eq 'HAB_TEC_EAD_PAGO'}">
-							<option selected value="HAB_TEC_EAD_PAGO">Habilitação
-								técnica paga - EAD</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.modalidade ne 'HAB_TEC_EAD_PAGO'}">
-							<option value="HAB_TEC_EAD_PAGO">Habilitação técnica
-								paga - EAD</option>
-						</c:if>
-
+						<option value="HAB_TEC_EAD_PAGO" ${cursosModelo.modalidade eq 'HAB_TEC_EAD_PAGO' ? 'selected':''}>Habilitação
+								técnica paga - EAD</option>				
+						
 					</select>
 					<div class="invalid-feedback">Selecione a modalidade</div>
 				</div>
@@ -103,78 +58,32 @@
 				<div class="col-md-4 mb-3">
 					<label for="country">Setor responsável</label> <select
 						class="custom-select d-block w-100" name="setor" id="setor"
-						required>
+						required>						
+						
 						<%-- Alimentos --%>
-						<c:if test="${cursosModelo.setor eq 'ALIMENTOS'}">
-							<option selected value="ALIMENTOS">Alimentos</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'ALIMENTOS'}">
-							<option value="ALIMENTOS">Alimentos</option>
-						</c:if>
-
+						<%-- habilitação técnica paga --%>
+						<option value="ALIMENTOS" ${cursosModelo.setor eq 'ALIMENTOS' ? 'selected':''}>Alimentos</option>	
+								
 						<%-- Automação --%>
-						<c:if test="${cursosModelo.setor eq 'AUTOMAÇÃO'}">
-							<option selected value="AUTOMAÇÃO">Automação</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'AUTOMAÇÃO'}">
-							<option value="AUTOMAÇÃO">Automação</option>
-						</c:if>
-
+						<option value="AUTOMAÇÃO" ${cursosModelo.setor eq 'AUTOMAÇÃO' ? 'selected':''}>Automação</option>	
+						
 						<%-- Eletroeletrônica --%>
-						<c:if test="${cursosModelo.setor eq 'ELETROELETRÔNICA'}">
-							<option selected value="ELETROELETRÔNICA">Eletroeletrônica</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'ELETROELETRÔNICA'}">
-							<option value="ELETROELETRÔNICA">Eletroeletrônica</option>
-						</c:if>
-
+						<option value="ELETROELETRÔNICA" ${cursosModelo.setor eq 'ELETROELETRÔNICA' ? 'selected':''}>Eletroeletrônica</option>	
+						
 						<%-- Gestão --%>
-						<c:if test="${cursosModelo.setor eq 'GESTÃO'}">
-							<option selected value="GESTÃO">Gestão</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'GESTÃO'}">
-							<option value="GESTÃO">Gestão</option>
-						</c:if>
-
+						<option value="GESTÃO" ${cursosModelo.setor eq 'GESTÃO' ? 'selected':''}>Gestão</option>	
+						
 						<%-- Gráfica --%>
-						<c:if test="${cursosModelo.setor eq 'GRÁFICA'}">
-							<option selected value="GRÁFICA">Gráfica</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'GRÁFICA'}">
-							<option value="GRÁFICA">Gráfica</option>
-						</c:if>
-
+						<option value="GRÁFICA" ${cursosModelo.setor eq 'GRÁFICA' ? 'selected':''}>Gráfica</option>
+						
 						<%-- Refrigeração --%>
-						<c:if test="${cursosModelo.setor eq 'REFRIGERAÇÃO'}">
-							<option selected value="REFRIGERAÇÃO">Refrigeração</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'REFRIGERAÇÃO'}">
-							<option value="REFRIGERAÇÃO">Refrigeração</option>
-						</c:if>
-
+						<option value="REFRIGERAÇÃO" ${cursosModelo.setor eq 'REFRIGERAÇÃO' ? 'selected':''}>Refrigeração</option>
+						
 						<%-- MetalMecânica --%>
-						<c:if test="${cursosModelo.setor eq 'METALMECÂNICA'}">
-							<option selected value="METALMECÂNICA">MetalMecânica</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'METALMECÂNICA'}">
-							<option value="METALMECÂNICA">MetalMecânica</option>
-						</c:if>
-
+						<option value="METALMECÂNICA" ${cursosModelo.setor eq 'METALMECÂNICA' ? 'selected':''}>MetalMecânica</option>
+						
 						<%-- TI --%>
-						<c:if test="${cursosModelo.setor eq 'TI'}">
-							<option selected value="TI">TI</option>
-						</c:if>
-
-						<c:if test="${cursosModelo.setor ne 'TI'}">
-							<option value="TI">TI</option>
-						</c:if>
+						<option value="TI" ${cursosModelo.setor eq 'TI' ? 'selected':''}>TI</option>			
 
 					</select>
 					<div class="invalid-feedback">Selecione o setor responsável</div>
