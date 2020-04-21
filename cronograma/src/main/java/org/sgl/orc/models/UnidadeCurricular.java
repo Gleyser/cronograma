@@ -145,6 +145,40 @@ public class UnidadeCurricular {
 				+ aulaInicial + ", dataFinal=" + dataFinal + ", aulaFinal=" + aulaFinal + ", ehModelo=" + ehModelo
 				+ "]";
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + aulaFinal;
+		result = prime * result + aulaInicial;
+		result = prime * result + cargaHoraria;
+		result = prime * result + ((dataFinal == null) ? 0 : dataFinal.hashCode());
+		result = prime * result + ((dataInicio == null) ? 0 : dataInicio.hashCode());
+		result = prime * result + (ehModelo ? 1231 : 1237);
+		result = prime * result + id;
+		result = prime * result + ((modulo == null) ? 0 : modulo.hashCode());
+		result = prime * result + node;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + numAvaliacoes;
+		result = prime * result + ((observacoes == null) ? 0 : observacoes.hashCode());
+		result = prime * result + ((professor == null) ? 0 : professor.hashCode());
+		result = prime * result + ((sala == null) ? 0 : sala.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UnidadeCurricular other = (UnidadeCurricular) obj;
+		if (id != other.id)
+			return false;
+		
+		return true;
+	}
 	
 	
 	

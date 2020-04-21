@@ -48,34 +48,69 @@ public class CursoController {
 
 	}
 	
+	@RequestMapping(value = "buscarcursomodelo",method = RequestMethod.POST)
+	public ModelAndView buscaCursoModelo(Long id) {
+		Curso cursoModelo = cursoDao.getCurso(id);
+		ModelAndView modelAndView = new ModelAndView("cursos/editarcursomodeloparte2");
+	    modelAndView.addObject("cursosModelo", cursoModelo);
+	    
+	    // UCs que pertecem ao modelo do curso
+	    List<UnidadeCurricular> ucsDoCurso = cursoModelo.getDisciplinas();
+	    modelAndView.addObject("ucsDoCurso", ucsDoCurso);
+	    
+	    // UCs modelo que ainda não pertecem ao modelo
+	    List<UnidadeCurricular> listaDeUcModelo = disciplinaoDao.getUnidadesCurricularesModelo();
+	    listaDeUcModelo.removeAll(ucsDoCurso);
+	    modelAndView.addObject("ucsModelos", listaDeUcModelo);	
+	    List<Integer> lista1 = new ArrayList<>();
+	    List<Integer> lista2 = new ArrayList<>();
+	    modelAndView.addObject("UCsParaRemover", lista1);
+	    modelAndView.addObject("UCsParaInserir", lista2);
+	    
+	    return modelAndView;		
+	}
+	
 	@RequestMapping(value = "editarcursomodelo",method = RequestMethod.POST)
-	public ModelAndView editarCursoModeloSalvar(@RequestParam(value = "inserirIds", required = false) int[] inserirIds, Curso curso) {
-		curso.setDisciplinas(cursoDao.getUCDoCurso(curso.getId()));		
-		for (int id : inserirIds) {
-			UnidadeCurricular ucModelo = disciplinaoDao.getUnidadeCurricular(id);
-			curso.addDisciplina(ucModelo);			
+	public ModelAndView editarCursoModeloSalvar(@RequestParam(value = "inserirIds", required = true, defaultValue = "[]") int[] inserirIds, @RequestParam(value = "excluirIds", required = true, defaultValue = "[]") int[] excluirIds, Curso curso) {
+		
+		// Remover disciplinas		
+		if (excluirIds.length > 0) {
+			Curso cursoEditado = cursoDao.getCurso(curso.getId());
+			for (int id:excluirIds) {
+				UnidadeCurricular ucParaRemover = disciplinaoDao.getUnidadeCurricular(id);
+				cursoEditado.removeDisciplina(ucParaRemover);
+			}
+			cursoDao.atualizaCurso(cursoEditado);
 		}
-		curso.transformeEmModelo();
-		cursoDao.atualizaCurso(curso);	
+		
+		// Inserir disciplinas
+		if (inserirIds.length > 0) {			
+			curso.setDisciplinas(cursoDao.getUCDoCurso(curso.getId()));		
+			for (int id : inserirIds) {
+				UnidadeCurricular ucModelo = disciplinaoDao.getUnidadeCurricular(id);
+				curso.addDisciplina(ucModelo);			
+			}
+		}
 				
+		curso.transformeEmModelo();
+		cursoDao.atualizaCurso(curso);				
 		ModelAndView modelAndView = new ModelAndView("cursos/editarcursomodeloparte2");
 		modelAndView.addObject("cursosModelo", curso);
+	   
+		// UCs que pertecem ao modelo do curso
+	    List<UnidadeCurricular> ucsDoCurso = curso.getDisciplinas();
+	    modelAndView.addObject("ucsDoCurso", ucsDoCurso);
+		
+	    // UCs modelo que ainda não pertecem ao modelo
 	    List<UnidadeCurricular> listaDeUcModelo = disciplinaoDao.getUnidadesCurricularesModelo();
-	    modelAndView.addObject("ucsModelos", listaDeUcModelo);
+	    listaDeUcModelo.removeAll(ucsDoCurso);
+	    modelAndView.addObject("ucsModelos", listaDeUcModelo);	    
+			    
 	    modelAndView.addObject("alterado", true);	    
 	    return modelAndView;
 
 	}
 	
-	@RequestMapping(value = "buscarcursomodelo",method = RequestMethod.POST)
-	public ModelAndView salvaCursoModelo(Long id) {
-		Curso cursoModelo = cursoDao.getCurso(id);
-		ModelAndView modelAndView = new ModelAndView("cursos/editarcursomodeloparte2");
-	    modelAndView.addObject("cursosModelo", cursoModelo);
-	    List<UnidadeCurricular> listaDeUcModelo = disciplinaoDao.getUnidadesCurricularesModelo();
-	    modelAndView.addObject("ucsModelos", listaDeUcModelo);
-		return modelAndView;
-		
-	}
+	
 
 }

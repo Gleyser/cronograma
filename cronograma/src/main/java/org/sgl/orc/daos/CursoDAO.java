@@ -45,6 +45,11 @@ public class CursoDAO {
 	public void atualizaCurso(Curso curso) {
 		manager.merge(curso);
 	}
+	
+	public Curso getCurso(int id) {
+		return manager.find(Curso.class, id);
+	}	
+	
 
 	public List<UnidadeCurricular> getUCDoCurso(int id) {
 		List<UnidadeCurricular> retorno = new ArrayList<UnidadeCurricular>();
@@ -55,6 +60,7 @@ public class CursoDAO {
 			}
 		}		
 		return retorno;
-	}	
+	}
+	
 
 }

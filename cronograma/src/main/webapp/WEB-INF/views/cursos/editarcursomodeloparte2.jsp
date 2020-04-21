@@ -145,24 +145,22 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row">Informática Aplicada</th>
-						<td>40</td>
-						<td>Básico</td>
-						<td>3</td>
-						<td><div class="form-group form-check">
-								<input type="checkbox" class="form-check-input"
-									id="exampleCheck1">
 
-							</div></td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-						<td>@mdo</td>
-					</tr>
+					<c:forEach items="${ucsDoCurso}" var="uc">
+						<tr>
+							<th scope="row">${uc.nome}</th>
+							<td>${uc.cargaHoraria}</td>
+							<td>${uc.modulo}</td>
+							<td>${uc.numAvaliacoes}</td>
+							<td><div class="form-group form-check">
+									<input type="checkbox" class="form-check-input"
+										path="UCsParaRemover" value="${uc.id}">
+
+								</div></td>
+
+
+						</tr>
+					</c:forEach>
 
 				</tbody>
 			</table>
@@ -192,7 +190,7 @@
 							<td>${uc.numAvaliacoes}</td>
 							<td><div class="form-group form-check">
 									<input type="checkbox" class="form-check-input"
-										name="inserirIds" value="${uc.id}">
+										path="UCsParaInserir" value="${uc.id}">
 
 								</div></td>
 

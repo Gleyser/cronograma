@@ -38,7 +38,7 @@ public class Curso {
 	private tipoSetor setor;
 	@ElementCollection(fetch = FetchType.EAGER)
 	private List<tipoDiaDaSemana> diasDeAula;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	private List<UnidadeCurricular> disciplinas;
 	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
 	@Column(name = "ehModelo", nullable = false)
