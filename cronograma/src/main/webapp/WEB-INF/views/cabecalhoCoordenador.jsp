@@ -5,11 +5,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SAGC - Sistema de Apoio Gerencial da Coordenação</title>
+<title>SAGC - Sistema de Apoio Gerencial</title>
 <c:url value="/resources/css" var="cssPath" />
 <c:url value="/images" var="images" />
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css" />
 <link rel="stylesheet" href="${cssPath}/bootstrap-theme.min.css" />
+<!-- Custom styles for this template-->
+<link href="${cssPath}/sb-admin-2.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template-->
+<c:url value="/resources/vendor/fontawesome-free/css" var="vendor" />
+<link href="${vendor}/all.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
@@ -21,6 +30,20 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
+
+
+<!-- Bootstrap core JavaScript-->
+<c:url value="/resources/vendor/jquery" var="vendorjquery" />
+<script src="${vendorjquery}/jquery.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<c:url value="/resources/js" var="js" />
+<script src="${js}/sb-admin-2.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<c:url value="/resources/js" var="js" />
+<script src="${js}/sb-admin-2.js"></script>
+
 <style>
 .bd-placeholder-img {
 	font-size: 1.125rem;
@@ -44,7 +67,7 @@
 		<img class="mb-4" src="${images}/logo.png" alt="" width="335"
 			height="150">
 		<h3>SENAI Prof. Stenio Lopes</h3>
-		<h4>Sistema de Apoio Gerencial da Coordenação</h4>
+		<h4>Sistema de Apoio Gerencial</h4>
 
 	</div>
 	<div class="container" align="center">

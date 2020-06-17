@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SAGC - Sistema de Apoio Gerencial da Coordenação</title>
+<title>SAGC - Sistema de Apoio Gerencial</title>
 <c:url value="/resources/css" var="cssPath" />
 <c:url value="/images" var="images" />
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css" />
@@ -44,7 +44,7 @@
 		<img class="mb-4" src="${images}/logo.png" alt="" width="335"
 			height="150">
 		<h3>SENAI Prof. Stenio Lopes</h3>
-		<h4>Sistema de Apoio Gerencial da Coordenação</h4>
+		<h4>Sistema de Apoio Gerencial</h4>
 	</div>
 	<div class="container" align="center">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
