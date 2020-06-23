@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SAG - Sistema de Apoio Gerencial</title>
+<title>SIGEP - Home</title>
 <c:url value="/resources/css" var="cssPath" />
 <c:url value="/images" var="images" />
 <link rel="stylesheet" href="${cssPath}/bootstrap.min.css" />
@@ -32,8 +32,8 @@
 <body>
  <div class="container" align="center">
 <img class="mb-4" src="${images}/logo.png" alt="" width="335" height="150">
-<h3>SENAI Prof. Stenio Lopes</h3>
-<h4>Sistema de Apoio Gerencial</h4>
+<h4>Sistema de Informação Gerencial</h4>
+<h4>da Educação Profissional</h4>
 <br>
 <form class="form-signin" action="inicio" method="post">
   <div class="text-center mb-8">
@@ -52,11 +52,13 @@
     <label for="inputPassword"></label>
   </div>
   
-  <button class="btn btn-lg btn-primary btn-block col-sm-3" type="submit">Entrar</button>
-  
+  <button class="btn btn-lg btn-primary btn-block col-sm-3" type="submit">Entrar</button> 
  
 </form>
-<p class="mt-5 mb-3 text-muted text-center">&copy;Gleyser Guimarães - CFP SL - 2020 - v.1</p>
+
+
+
+<p class="mt-5 mb-3 text-muted text-center">&copy;SIGEP - CFP SL - 2020 - v.1</p>
 </div>
 </body>
 </html>
