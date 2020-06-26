@@ -29,6 +29,7 @@ public class Curso {
 	private String ano;
 	@Enumerated(EnumType.STRING)
 	private tipoSemestre semestre;
+	private int trimestre;
 	private Calendar dataInicio;
 	private Calendar datafinal;
 	private String codSGE;
@@ -44,7 +45,11 @@ public class Curso {
 	@Column(name = "ehModelo", nullable = false)
 	private boolean ehModelo;
 	private int cargaHorariaTotal;
+	private int cargaHorariaRealizada;
 	private int numAlunos;
+	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
+	@Column(name = "ehResidual", nullable = false)
+	private boolean ehResidual;
 	
 	public String getNome() {
 		return nome;
@@ -64,12 +69,7 @@ public class Curso {
 	public void setAno(String ano) {
 		this.ano = ano;
 	}
-	public tipoSemestre getSemestre() {
-		return semestre;
-	}
-	public void setSemestre(tipoSemestre semestre) {
-		this.semestre = semestre;
-	}
+	
 	public Calendar getDataInicio() {
 		return dataInicio;
 	}
@@ -152,6 +152,36 @@ public class Curso {
 	public void removeDisciplina(UnidadeCurricular uc) {
 		// to do
 	}
+	
+	public int getTrimestre() {
+		return trimestre;
+	}
+	public void setTrimestre(int trimestre) {
+		this.trimestre = trimestre;
+	}
+	public int getCargaHorariaRealizada() {
+		return cargaHorariaRealizada;
+	}
+	public void setCargaHorariaRealizada(int cargaHorariaRealizada) {
+		this.cargaHorariaRealizada = cargaHorariaRealizada;
+	}
+	public boolean isEhResidual() {
+		return ehResidual;
+	}
+	public void setEhResidual(boolean ehResidual) {
+		this.ehResidual = ehResidual;
+	}
+	public void tornaResidual() {
+		this.ehResidual = true;
+	}
+	public tipoSemestre getSemestre() {
+		return semestre;
+	}
+	public void setSemestre(tipoSemestre semestre) {
+		this.semestre = semestre;
+	}
+	
+	
 	
 	
 	

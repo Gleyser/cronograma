@@ -9,6 +9,7 @@ public class PlanoDeMetasController {
 	
 	@RequestMapping("inserirnovoplanodemeta")
     public String form(){
+		
         return "plano/novo";
     }
 	

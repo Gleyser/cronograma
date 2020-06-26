@@ -395,14 +395,24 @@
 				                    <tr>
 				                      <th colspan="5">Curso: Técnico em Automação Industrial  </th>
 				                      <!-- rowspan se quiser mesclar linhas -->
-				                      <th><a href="#" class="btn btn-primary btn-circle">
+				                      
+				                      
+                  
+                  <th>                      
+				       <a href="#" class="btn btn-primary btn-circle">
                     <i class="fa fa-cog"></i>
-                  </a></th>
-				                      <th><a href="#" class="btn btn-danger btn-circle">
+                  </a>
+                  
+                  
+                  </th>
+				                      <th>
+				                      <a href="#" class="btn btn-danger btn-circle">
                     <i class="fas fa-trash"></i>
                     <!-- icones em https://www.w3schools.com/icons/fontawesome_icons_webapp.asp -->
                   </a></th>
 				                    </tr>
+				                    
+				                    
 				                  </thead>
 				                  
 				                  <tbody>
