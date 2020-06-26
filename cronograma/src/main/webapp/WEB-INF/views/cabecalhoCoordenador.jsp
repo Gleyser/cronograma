@@ -87,7 +87,7 @@
 					class="sidebar-brand d-flex align-items-center justify-content-center"
 					href="#">
 					<div class="sidebar-brand-icon rotate-n-15">
-						<i class="fas fa-laptop-code"></i>
+						<i class="fas fa-cogs"></i>
 					</div>
 					<div class="sidebar-brand-text mx-1">CEP Stenio Lopes</div>
 				</a>
@@ -115,8 +115,9 @@
 						data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<!-- <h6 class="collapse-header">Opções:</h6>-->
-							<a class="collapse-item" href="#">Novo</a> 
+							<a class="collapse-item" href="inserirnovoplanodemeta">Novo</a> 
 							<a class="collapse-item" href="#">Atual</a>
+							<a class="collapse-item" href="#">Rascunhos</a>							
 							<a class="collapse-item" href="#">Anteriores</a>
 						</div>
 					</div></li>

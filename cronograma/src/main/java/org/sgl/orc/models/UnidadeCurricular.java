@@ -42,6 +42,8 @@ public class UnidadeCurricular {
 	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
 	@Column(name = "ehModelo", nullable = false)
 	private boolean ehModelo;
+	@Enumerated(EnumType.STRING)
+	private tipoSetor setor;
 	
 	
 	public Usuario getProfessor() {
@@ -136,6 +138,13 @@ public class UnidadeCurricular {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+		
+	public tipoSetor getSetor() {
+		return setor;
+	}
+	public void setSetor(tipoSetor setor) {
+		this.setor = setor;
 	}
 	@Override
 	public String toString() {

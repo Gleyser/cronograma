@@ -57,7 +57,7 @@
 
 						<%-- Habilitação técnica - novo EM --%>
 						<option value="HAB_TEC_NEM"
-							${cursosModelo.modalidade eq 'HAB_TEC_NEM' ? 'selected':''}>Habilitação
+							${cursosModelo.modalidade eq 'INICIACAO_PROFISSIONAL_NEM' ? 'selected':''}>Habilitação
 							técnica - novo EM</option>
 
 						<%-- Habilitação técnica
