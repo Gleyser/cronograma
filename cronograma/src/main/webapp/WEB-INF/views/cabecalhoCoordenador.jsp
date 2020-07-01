@@ -117,6 +117,7 @@
 							<a class="collapse-item" href="#">Atual</a>
 							<a class="collapse-item" href="planosdemetarascunhos">Rascunhos</a>							
 							<a class="collapse-item" href="#">Anteriores</a>
+							<a class="collapse-item" href="definirmetasanuais">Definir metas</a>
 						</div>
 					</div></li>
 

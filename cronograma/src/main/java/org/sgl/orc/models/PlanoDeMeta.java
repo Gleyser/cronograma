@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -26,15 +27,12 @@ public class PlanoDeMeta {
 	private String ano;
 	@Enumerated(EnumType.STRING)
 	private tipoEstadoDoPlano estadoDoPlano;
-	private int metaMatriculasGratuitas;
-	private int metaMatriculasPagas;
-	private int metaAlunoHoraGratuitas;
-	private int metaAlunoHoraPagas;
 	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	private List<Curso> cursosGratuitos;
 	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	private List<Curso> cursosPagos;
-	
+	@ManyToOne
+	private MetaAnual meta;
 	
 	public int getId() {
 		return id;
@@ -61,28 +59,28 @@ public class PlanoDeMeta {
 		this.estadoDoPlano = estadoDoPlano;
 	}
 	public int getMetaMatriculasGratuitas() {
-		return metaMatriculasGratuitas;
+		return meta.getMetaAlunoHoraGratuitas();
 	}
 	public void setMetaMatriculasGratuitas(int metaMatriculasGratuitas) {
-		this.metaMatriculasGratuitas = metaMatriculasGratuitas;
+		 meta.setMetaMatriculasGratuitas(metaMatriculasGratuitas);
 	}
 	public int getMetaMatriculasPagas() {
-		return metaMatriculasPagas;
+		return meta.getMetaMatriculasPagas();
 	}
 	public void setMetaMatriculasPagas(int metaMatriculasPagas) {
-		this.metaMatriculasPagas = metaMatriculasPagas;
+		meta.setMetaMatriculasPagas(metaMatriculasPagas);;
 	}
 	public int getMetaAlunoHoraGratuitas() {
-		return metaAlunoHoraGratuitas;
+		return meta.getMetaAlunoHoraGratuitas();
 	}
 	public void setMetaAlunoHoraGratuitas(int metaAlunoHoraGratuitas) {
-		this.metaAlunoHoraGratuitas = metaAlunoHoraGratuitas;
+		meta.setMetaAlunoHoraGratuitas(metaAlunoHoraGratuitas);;
 	}
 	public int getMetaAlunoHoraPagas() {
-		return metaAlunoHoraPagas;
+		return meta.getMetaAlunoHoraPagas();
 	}
 	public void setMetaAlunoHoraPagas(int metaAlunoHoraPagas) {
-		this.metaAlunoHoraPagas = metaAlunoHoraPagas;
+		meta.setMetaMatriculasPagas(metaAlunoHoraPagas);
 	}
 	public List<Curso> getCursosGratuitos() {
 		return cursosGratuitos;
@@ -96,7 +94,13 @@ public class PlanoDeMeta {
 	public void setCursosPagos(List<Curso> cursosPagos) {
 		this.cursosPagos = cursosPagos;
 	}
-	
+		
+	public MetaAnual getMeta() {
+		return meta;
+	}
+	public void setMeta(MetaAnual meta) {
+		this.meta = meta;
+	}
 	public void tornarPlanoRascunho() {
 		this.estadoDoPlano = tipoEstadoDoPlano.Rascunho;
 	}
