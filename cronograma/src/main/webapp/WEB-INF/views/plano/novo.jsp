@@ -12,8 +12,8 @@
           </div>
         </div>       
 
-        <div class="row">
-          <div class="col-md-5 mb-3">
+        
+          <div class="col-md-3 mb-5">
             <label for="country">Ano</label>
             <select class="custom-select d-block w-100" name="ano" id="ano" required>
               <option value="2019">2019</option>
@@ -29,18 +29,22 @@
               O ano do plano de metas é obrigatório
             </div>
           </div>  
-          
+           <button class="btn btn-lg btn-primary btn-block col-sm-4" type="submit">Iniciar Plano</button>
+      </form>
           
       
         </div>
         <br>
         
-        <button class="btn btn-lg btn-primary btn-block col-sm-4" type="submit">Iniciar Plano</button>
-      </form>
+       
     </div>
-  </div>
-
-
+  
+  
+ <!-- End do Page Wrapper do Cabeçalho -->
+ </div>
+ <!-- End do Container do Cabeçalho -->
 </div>
+
+
 </body>
 </html>

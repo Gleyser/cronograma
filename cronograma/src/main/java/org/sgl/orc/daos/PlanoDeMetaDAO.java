@@ -17,11 +17,21 @@ public class PlanoDeMetaDAO {
 	private EntityManager manager;
 	
 	public void gravar(PlanoDeMeta plano){
-		manager.persist(plano);
+		manager.persist(plano);		
+		
     }
 	
 	public List<PlanoDeMeta> recuperarPlanosDeMeta(){
-	    return manager.createQuery("select p from PlanoDeMeta p", PlanoDeMeta.class).getResultList();
+	    return manager.createQuery("select p from PlanoDeMeta p order by p.ano", PlanoDeMeta.class).getResultList();
+	}
+	
+	public List<PlanoDeMeta> recuperarPlanosDeMetaRascunho() {
+		 return manager.createQuery("select p from PlanoDeMeta p where p.estadoDoPlano='Rascunho' order by p.ano", PlanoDeMeta.class).getResultList();
+	}
+
+	public PlanoDeMeta recuperaPlanoDeMeta(Long id) {
+		return manager.createQuery("select p from PlanoDeMeta p where p.id =" + id.toString(), PlanoDeMeta.class).getSingleResult();		
+		
 	}
 
 }

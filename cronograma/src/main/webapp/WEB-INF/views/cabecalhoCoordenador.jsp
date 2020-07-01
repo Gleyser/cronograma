@@ -20,7 +20,7 @@
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
 
-
+<!-- Organizar isso aqui -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	crossorigin="anonymous"></script>
@@ -83,13 +83,11 @@
 				id="accordionSidebar">
 
 				<!-- Sidebar - Brand -->
-				<a
-					class="sidebar-brand d-flex align-items-center justify-content-center"
-					href="#">
+				<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
 					<div class="sidebar-brand-icon rotate-n-15">
 						<i class="fas fa-cogs"></i>
 					</div>
-					<div class="sidebar-brand-text mx-1">CEP Stenio Lopes</div>
+					<div class="sidebar-brand-text mx-1">CEP IST Stenio Lopes</div>
 				</a>
 
 				<!-- Divider -->
@@ -103,7 +101,7 @@
 				<hr class="sidebar-divider">
 
 				<!-- Heading -->
-				<!-- <div class="sidebar-heading">Opções</div>-->
+				<div class="sidebar-heading">Educação Profissional</div>
 
 				<!-- Nav Item - Pages Collapse Menu -->
 				<li class="nav-item"><a class="nav-link collapsed" href="#"
@@ -117,7 +115,7 @@
 							<!-- <h6 class="collapse-header">Opções:</h6>-->
 							<a class="collapse-item" href="inserirnovoplanodemeta">Novo</a> 
 							<a class="collapse-item" href="#">Atual</a>
-							<a class="collapse-item" href="#">Rascunhos</a>							
+							<a class="collapse-item" href="planosdemetarascunhos">Rascunhos</a>							
 							<a class="collapse-item" href="#">Anteriores</a>
 						</div>
 					</div></li>
@@ -195,8 +193,9 @@
 					<!-- Topbar -->
 					<nav
 						class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-						<h5>Sistema de Informação Gerencial da Educação Profissional</h5>		
-
+						<h5>Sistema de Informação Gerencial <br> Centro de Formação Profissional Prof. Stenio Lopes <br> Instituto SENAI de Tecnologia em Automação</h5>	
+						
+                        
 						<!-- Sidebar Toggle (Topbar) -->
 						<button id="sidebarToggleTop"
 							class="btn btn-link d-md-none rounded-circle mr-3">

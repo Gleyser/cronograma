@@ -33,7 +33,7 @@
  <div class="container" align="center">
 <img class="mb-4" src="${images}/logo.png" alt="" width="335" height="150">
 <h4>Sistema de Informação Gerencial</h4>
-<h4>da Educação Profissional</h4>
+<h4> </h4>
 <br>
 <form class="form-signin" action="inicio" method="post">
   <div class="text-center mb-8">

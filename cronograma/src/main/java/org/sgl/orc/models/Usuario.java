@@ -20,6 +20,8 @@ public class Usuario {
 	private tipoSetor setor;
 	@Enumerated(EnumType.STRING)
 	private tipoContrato tipoDeContrato;
+	@Enumerated(EnumType.STRING)
+	private tipoUnidade unidade;
 	
 	public String getEmail() {
 		return email;
@@ -65,6 +67,13 @@ public class Usuario {
 	}
 	public void setTipoDeContrato(tipoContrato tipoDeContrato) {
 		this.tipoDeContrato = tipoDeContrato;
+	}
+		
+	public tipoUnidade getUnidade() {
+		return unidade;
+	}
+	public void setUnidade(tipoUnidade unidade) {
+		this.unidade = unidade;
 	}
 	@Override
 	public String toString() {

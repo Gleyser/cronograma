@@ -97,6 +97,10 @@ public class PlanoDeMeta {
 		this.cursosPagos = cursosPagos;
 	}
 	
+	public void tornarPlanoRascunho() {
+		this.estadoDoPlano = tipoEstadoDoPlano.Rascunho;
+	}
+	
 	
 
 }

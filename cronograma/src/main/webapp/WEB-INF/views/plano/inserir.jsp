@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/views/cabecalhoCoordenador.jsp" %>
 <div class="container" align="center">
- <h1 class="h4 mb-3 font-weight-normal"><b>Novo Plano de Metas:</b> -titulo-</h1>
- <h1 class="h4 mb-3 font-weight-normal"><b>Ano:</b> -ano- </h1>
+ <h1 class="h4 mb-3 font-weight-normal"><b>Plano de Metas:</b> ${plano.titulo}</h1>
+ <h1 class="h4 mb-3 font-weight-normal"><b>Ano:</b> ${plano.ano} </h1>
  
  
       <div class="card shadow mb-4">
