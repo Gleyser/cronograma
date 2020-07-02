@@ -1,4 +1,4 @@
-package org.sgl.orc.models;
+package org.sgl.orc.models.tipos;
 
 public enum tipoSetor {
 ALIMENTOS, AUTOMAÇÃO, ELETROELETRÔNICA, GESTÃO, GRÁFICA, REFRIGERAÇÃO, MECATRÔNICA, METALMECÂNICA, TI, COORDENAÇÃO,  GERENCIA

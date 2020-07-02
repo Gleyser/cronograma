@@ -4,7 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.sgl.orc.daos.UsuarioDAO;
 import org.sgl.orc.models.Usuario;
-import org.sgl.orc.models.tipoCargo;
+import org.sgl.orc.models.tipos.tipoCargo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

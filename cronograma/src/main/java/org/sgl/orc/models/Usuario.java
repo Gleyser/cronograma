@@ -7,6 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.sgl.orc.models.tipos.tipoCargo;
+import org.sgl.orc.models.tipos.tipoContrato;
+import org.sgl.orc.models.tipos.tipoSetor;
+import org.sgl.orc.models.tipos.tipoUnidade;
+
 @Entity
 public class Usuario {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)

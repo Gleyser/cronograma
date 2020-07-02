@@ -12,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 
+import org.sgl.orc.models.tipos.tipoModulo;
+import org.sgl.orc.models.tipos.tipoSetor;
+
 /**
  * @author Gleyser
  *

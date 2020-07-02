@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.sgl.orc.models.tipos.tipoEstadoDoPlano;
+
 /**
  * @author Gleyser
  *

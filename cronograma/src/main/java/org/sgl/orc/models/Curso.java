@@ -15,6 +15,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.sgl.orc.models.tipos.tipoDiaDaSemana;
+import org.sgl.orc.models.tipos.tipoModalidade;
+import org.sgl.orc.models.tipos.tipoSemestre;
+import org.sgl.orc.models.tipos.tipoSetor;
+import org.sgl.orc.models.tipos.tipoTurno;
+
 /**
  * @author Gleyser
  *
