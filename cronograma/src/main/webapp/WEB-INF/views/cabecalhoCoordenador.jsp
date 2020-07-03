@@ -68,7 +68,7 @@
 	<div class="container" align="center">
 		<img class="mb-4" src="${images}/logo.png" alt="" width="335"
 			height="150">
-		
+
 
 	</div>
 
@@ -83,7 +83,9 @@
 				id="accordionSidebar">
 
 				<!-- Sidebar - Brand -->
-				<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+				<a
+					class="sidebar-brand d-flex align-items-center justify-content-center"
+					href="#">
 					<div class="sidebar-brand-icon rotate-n-15">
 						<i class="fas fa-cogs"></i>
 					</div>
@@ -113,11 +115,12 @@
 						data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<!-- <h6 class="collapse-header">Opções:</h6>-->
-							<a class="collapse-item" href="inserirnovoplanodemeta">Novo</a> 
-							<a class="collapse-item" href="#">Atual</a>
-							<a class="collapse-item" href="planosdemetarascunhos">Rascunhos</a>							
-							<a class="collapse-item" href="#">Anteriores</a>
-							<a class="collapse-item" href="definirmetasanuais">Definir metas</a>
+							<a class="collapse-item" href="inserirnovoplanodemeta">Novo</a> <a
+								class="collapse-item" href="#">Atual</a> <a
+								class="collapse-item" href="planosdemetarascunhos">Rascunhos</a>
+							<a class="collapse-item" href="#">Anteriores</a> <a
+								class="collapse-item" href="definirmetasanuais">Definir
+								metas</a>
 						</div>
 					</div></li>
 
@@ -131,9 +134,9 @@
 						aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<!-- <h6 class="collapse-header">Opções:</h6>-->
-							 <a	class="collapse-item" href="#">Página geral</a> 
-							 <a class="collapse-item" href="#">Calendário escolar</a>
-							 
+							<a class="collapse-item" href="#">Página geral</a> <a
+								class="collapse-item" href="#">Calendário escolar</a>
+
 						</div>
 					</div></li>
 
@@ -148,10 +151,11 @@
 						aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<!-- <h6 class="collapse-header">Opções:</h6>-->
-							<a class="collapse-item" href="inserircursomodelo">Inserir curso modelo</a>
-							<a class="collapse-item" href="editarcursomodelo">Editar curso modelo</a> 
-							<a class="collapse-item" href="inserirunidadecurricularmodelo">Inserir UC modelo</a> 
-							<a class="collapse-item" href="#">Editar UC modelo</a> 
+							<a class="collapse-item" href="inserircursomodelo">Inserir
+								curso modelo</a> <a class="collapse-item" href="editarcursomodelo">Editar
+								curso modelo</a> <a class="collapse-item"
+								href="inserirunidadecurricularmodelo">Inserir UC modelo</a> <a
+								class="collapse-item" href="#">Editar UC modelo</a>
 						</div>
 					</div></li>
 
@@ -166,9 +170,9 @@
 						aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 						<div class="bg-white py-2 collapse-inner rounded">
 							<!-- <h6 class="collapse-header">Opções:</h6>-->
-							<a class="collapse-item" href="#">Inserir</a> 
-							<a class="collapse-item" href="#">Editar</a> 
-						    <a class="collapse-item" href="#">Matriz de polivalência</a>							
+							<a class="collapse-item" href="#">Inserir</a> <a
+								class="collapse-item" href="#">Editar</a> <a
+								class="collapse-item" href="#">Matriz de polivalência</a>
 						</div>
 					</div></li>
 
@@ -194,9 +198,13 @@
 					<!-- Topbar -->
 					<nav
 						class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-						<h5>Sistema de Informação Gerencial <br> Centro de Formação Profissional Prof. Stenio Lopes <br> Instituto SENAI de Tecnologia em Automação</h5>	
-						
-                        
+						<h5>
+							Sistema de Informação Gerencial <br> Centro de Formação
+							Profissional Prof. Stenio Lopes <br> Instituto SENAI de
+							Tecnologia em Automação
+						</h5>
+
+
 						<!-- Sidebar Toggle (Topbar) -->
 						<button id="sidebarToggleTop"
 							class="btn btn-link d-md-none rounded-circle mr-3">
@@ -251,8 +259,7 @@
 											<div class="text-truncate">Solicitação de livros</div>
 											<div class="small text-gray-500">Gleyser</div>
 										</div>
-									</a> 
-									<a class="dropdown-item text-center small text-gray-500"
+									</a> <a class="dropdown-item text-center small text-gray-500"
 										href="#">Veja todas as solicitações</a>
 								</div></li>
 
@@ -271,14 +278,14 @@
 									class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 									aria-labelledby="userDropdown">
 									<a class="dropdown-item" href="#"> <i
-										class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-										Meu perfil
+										class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Meu
+										perfil
 									</a> <a class="dropdown-item" href="#"> <i
 										class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 										Configurações
 									</a> <a class="dropdown-item" href="#"> <i
-										class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-										Log de atividades
+										class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Log de
+										atividades
 									</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="sair" data-toggle="modal"

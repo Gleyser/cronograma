@@ -15,11 +15,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.sgl.orc.models.tipos.tipoEstadoDoPlano;
+import org.sgl.orc.models.tipos.tipoModalidade;
 
 /**
  * @author Gleyser
  *
  */
+
 @Entity
 public class PlanoDeMeta {
 	
@@ -35,6 +37,10 @@ public class PlanoDeMeta {
 	private List<Curso> cursosPagos;
 	@ManyToOne
 	private MetaAnual meta;
+	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	private List<Modalidade> modalidades;
+	
+	
 	
 	public int getId() {
 		return id;
@@ -106,6 +112,13 @@ public class PlanoDeMeta {
 	public void tornarPlanoRascunho() {
 		this.estadoDoPlano = tipoEstadoDoPlano.Rascunho;
 	}
+	public List<Modalidade> getModalidades() {
+		return modalidades;
+	}
+	public void setModalidades(List<Modalidade> modalidades) {
+		this.modalidades = modalidades;
+	}
+	
 	
 	
 

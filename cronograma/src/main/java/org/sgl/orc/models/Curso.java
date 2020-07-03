@@ -185,14 +185,6 @@ public class Curso {
 	}
 	public void setSemestre(tipoSemestre semestre) {
 		this.semestre = semestre;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 
 }

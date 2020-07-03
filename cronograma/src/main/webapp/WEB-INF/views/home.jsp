@@ -56,9 +56,7 @@
  
 </form>
 
-
-
-<p class="mt-5 mb-3 text-muted text-center">&copy;SIGEP - CFP SL - 2020 - v.1</p>
+<%@ include file="/WEB-INF/views/rodape.jsp"%>
 </div>
 </body>
 </html>
