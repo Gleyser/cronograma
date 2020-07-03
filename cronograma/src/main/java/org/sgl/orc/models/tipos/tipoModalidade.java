@@ -1,25 +1,27 @@
 package org.sgl.orc.models.tipos;
 
 public enum tipoModalidade {
-APRENDIZAGEM_BÁSICA_GRATUITO,
-APRENDIZAGEM_TÉCNICA_GRATUITO,
-APERFEICOAMENTO_EAD_GRATUITO,
-APERFEICOAMENTO_GRATUITO,
-HAB_TEC_GRATUITO,
-HAB_TEC_EBEP_GRATUITO,
-HAB_TEC_EAD_GRATUITO,
-INICIACAO_NEM_GRATUITO,
-INICIACAO_GRATUITO,
-INICIACAO_EAD_GRATUITO,
-QUALIFICACAO_GRATUITO,
-QUALIFICACAO_EAD_GRATUITO,
-APERFEICOAMENTO_EAD_PAGO,
-APERFEICOAMENTO_PAGO,
-HAB_TEC_PAGO,
-HAB_TEC_EAD_PAGO,
-INICIACAO_PAGO,
-INICIACAO_EAD_PAGO,
-INICIACAO_EAD_BOLSAS_PAGO,
-QUALIFICACAO_PAGO,
-QUALIFICACAO_EAD_PAGO
+APRENDIZAGEM_INDUSTRIAL_BASICA("Aprendizagem Básica"),
+APRENDIZAGEM_INDUSTRIAL_TECNICA("Aprendizagem Técnica"),
+APERFEICOAMENTO_EAD("Aperfeiçoameno Profissional EAD"),
+APERFEICOAMENTO("Aperfeiçoamento Profissional"),
+HABILITACAO_TECNICA("Habilitação Técnica"),
+HABILITACAO_TECNICA_EBEP("Habilitação Técnica EBEP"),
+HABILITACAO_TECNICA_EAD("Habilitação Técnica EAD"),
+INICIACAO_NEM("Iniciação Profissional NEM"),
+INICIACAO("Iniciação Profissional"),
+INICIACAO_EAD("Iniciação Profissional EAD"),
+INICIACAO_EAD_BOLSAS("Iniciação EAD Bolsas"),
+QUALIFICACAO("Qualificação Profissional"),
+QUALIFICACAO_EAD("Qualificação Profissional EAD");
+
+private String descricao;
+
+	tipoModalidade(String string) {
+	this.descricao = descricao;
+}
+
+public String getDescricao() {
+	return descricao;
+}
 }

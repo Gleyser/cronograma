@@ -1,7 +1,8 @@
 <%@ include file="/WEB-INF/views/cabecalhoCoordenador.jsp"%>
 <div class="container" align="center">
 	<h1 class="h4 mb-3 font-weight-normal">
-		<b>Plano de Metas:</b> ${plano.titulo}
+		<b>${plano.estadoDoPlano}</b> <br> <b>Plano de Metas:</b>
+		${plano.titulo}
 	</h1>
 	<h1 class="h4 mb-3 font-weight-normal">
 		<b>Ano:</b> ${plano.ano}
@@ -134,8 +135,8 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Editar Título e
-						Ano do Plano de Metas</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Configurações
+						do Plano de Metas</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">×</span>
@@ -171,6 +172,106 @@
 
 							</div>
 
+							<h5 class="h5 mb-3 font-weight-normal">Editar visibilidade
+								das modalidades em Educação Profissional - Gratuito</h5>
+
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">Modalidade</th>
+										<th scope="col">Exibir</th>
+									</tr>
+								</thead>
+								<tbody>
+								
+								<c:forEach items="${modalidadesGratuitasDoPlano}" var="modalidadeGratuitaDoPlano">
+									<tr>
+									
+									
+									
+										<th scope="row">${modalidadeGratuitaDoPlano.tipoModalidade}</th>
+										<td><div class="custom-control custom-switch">
+												<input type="checkbox" class="custom-control-input"
+													id="${modalidadeGratuitaDoPlano.id}" checked> <label
+													class="custom-control-label" for="${modalidadeGratuitaDoPlano.id}"></label>
+											</div></td>
+                                    
+
+									</tr>
+                                 </c:forEach>
+
+                                 <c:forEach items="${modalidadesGratuitasQueNaoEstaoNoPlano}" var="modalidadeGratuitaForaDoPlano">
+									<tr>
+									
+									
+									
+										<th scope="row">${modalidadeGratuitaForaDoPlano.tipoModalidade}</th>
+										<td><div class="custom-control custom-switch">
+												<input type="checkbox" class="custom-control-input"
+													id="${modalidadeGratuitaForaDoPlano.id}"> <label
+													class="custom-control-label" for="${modalidadeGratuitaForaDoPlano.id}"></label>
+											</div></td>
+                                    
+
+									</tr>
+                                 </c:forEach>
+
+								</tbody>
+							</table>			
+							
+							<h5 class="h5 mb-3 font-weight-normal">Editar visibilidade
+								das modalidades em Educação Profissional - Pago</h5>
+
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th scope="col">Modalidade</th>
+										<th scope="col">Exibir</th>
+									</tr>
+								</thead>
+								<tbody>
+								
+								<c:forEach items="${modalidadesPagasDoPlano}" var="modalidadePagaDoPlano">
+									<tr>
+									
+									
+									
+										<th scope="row">${modalidadePagaDoPlano.tipoModalidade}</th>
+										<td><div class="custom-control custom-switch">
+												<input type="checkbox" class="custom-control-input"
+													id="${modalidadePagaDoPlano.id}" checked> <label
+													class="custom-control-label" for="${modalidadePagaDoPlano.id} "></label>
+											</div></td>
+                                    
+
+									</tr>
+                                 </c:forEach>
+
+                                <c:forEach items="${modalidadesPagasQueNaoEstaoNoPlano}" var="modalidadePagaForaDoPlano">
+									<tr>
+									
+									
+									 
+										<th scope="row">${modalidadePagaForaDoPlano.tipoModalidade}</th>
+										<td><div class="custom-control custom-switch">
+												<input type="checkbox" class="custom-control-input"
+													id="${modalidadePagaForaDoPlano.id}"> <label
+													class="custom-control-label" for="${modalidadePagaForaDoPlano.id}"></label>
+											</div></td>
+
+ 																	 
+ 									 
+ 									 
+									</tr>
+                                 </c:forEach> 	
+
+								</tbody>
+							</table>	
+								
+
+
+
+
 							<div class="col-md-12 mb-5">
 
 								<button class="btn btn-success" type="submit">Salvar</button>
@@ -187,15 +288,15 @@
 	</div>
 	<!-- Fim do Modal de Editar titulo e ano -->
 
-<!-- EP - Quadro Geral -->
-<%@ include file="/WEB-INF/views/plano/quadrogeral.jsp"%>
+	<!-- EP - Quadro Geral -->
+	<%@ include file="/WEB-INF/views/plano/quadrogeral.jsp"%>
 
-<!-- EP - Gratuito -->
-<%@ include file="/WEB-INF/views/plano/quadroepgratuito.jsp"%>
+	<!-- EP - Gratuito -->
+	<%@ include file="/WEB-INF/views/plano/quadroepgratuito.jsp"%>
 
-<!-- EP - Pago -->
-<%@ include file="/WEB-INF/views/plano/quadroeppago.jsp"%>
+	<!-- EP - Pago -->
+	<%@ include file="/WEB-INF/views/plano/quadroeppago.jsp"%>
 
 
-<!-- Rodape -->
-<%@ include file="/WEB-INF/views/rodape.jsp"%>
+	<!-- Rodape -->
+	<%@ include file="/WEB-INF/views/rodape.jsp"%>

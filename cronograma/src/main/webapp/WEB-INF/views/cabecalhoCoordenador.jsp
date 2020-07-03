@@ -20,20 +20,6 @@
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
 
-<!-- Organizar isso aqui -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	crossorigin="anonymous"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
-
-
 <!-- Bootstrap core JavaScript-->
 <c:url value="/resources/vendor/jquery" var="vendorjquery" />
 <script src="${vendorjquery}/jquery.min.js"></script>
@@ -45,6 +31,10 @@
 <!-- Custom scripts for all pages-->
 <c:url value="/resources/js" var="js" />
 <script src="${js}/sb-admin-2.js"></script>
+
+<!-- Custom scripts for all pages-->
+<c:url value="/resources/js" var="js" />
+<script src="${js}/bootstrap.min.js"></script>
 
 <style>
 .bd-placeholder-img {
@@ -96,7 +86,7 @@
 				<hr class="sidebar-divider my-0">
 
 				<!-- Nav Item - Dashboard -->
-				<li class="nav-item active"><a class="nav-link" href="#"> <i
+				<li class="nav-item active"><a class="nav-link" href="inicioCoordenador"> <i
 						class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
 
 				<!-- Divider -->

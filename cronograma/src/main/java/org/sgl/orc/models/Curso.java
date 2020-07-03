@@ -17,9 +17,9 @@ import javax.persistence.OneToMany;
 
 import org.sgl.orc.models.tipos.tipoDiaDaSemana;
 import org.sgl.orc.models.tipos.tipoModalidade;
-import org.sgl.orc.models.tipos.tipoSemestre;
 import org.sgl.orc.models.tipos.tipoSetor;
 import org.sgl.orc.models.tipos.tipoTurno;
+import org.sgl.orc.models.tipos.tipoUnidade;
 
 /**
  * @author Gleyser
@@ -33,8 +33,7 @@ public class Curso {
 	@Enumerated(EnumType.STRING)
 	private tipoModalidade modalidade;
 	private String ano;
-	@Enumerated(EnumType.STRING)
-	private tipoSemestre semestre;
+	private int semestre;
 	private int trimestre;
 	private Calendar dataInicio;
 	private Calendar datafinal;
@@ -56,6 +55,8 @@ public class Curso {
 	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
 	@Column(name = "ehResidual", nullable = false)
 	private boolean ehResidual;
+	@Enumerated(EnumType.STRING)
+	private tipoUnidade unidade;
 	
 	public String getNome() {
 		return nome;
@@ -180,11 +181,20 @@ public class Curso {
 	public void tornaResidual() {
 		this.ehResidual = true;
 	}
-	public tipoSemestre getSemestre() {
+	public int getSemestre() {
 		return semestre;
 	}
-	public void setSemestre(tipoSemestre semestre) {
+	public void setSemestre(int semestre) {
 		this.semestre = semestre;
-	}	
+	}
+	public tipoUnidade getUnidade() {
+		return unidade;
+	}
+	public void setUnidade(tipoUnidade unidade) {
+		this.unidade = unidade;
+	}
+	
+	
+		
 
 }

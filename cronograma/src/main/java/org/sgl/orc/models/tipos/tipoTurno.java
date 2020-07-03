@@ -1,5 +1,17 @@
 package org.sgl.orc.models.tipos;
 
 public enum tipoTurno {
-MANHÃ, TARDE, NOITE, 
+MANHÃ("M"), TARDE("T"), NOITE("N");
+
+private String descricao;
+
+	tipoTurno(String string) {
+		this.descricao = descricao;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}	
+
+
 }

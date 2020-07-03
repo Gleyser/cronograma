@@ -1,5 +1,6 @@
 package org.sgl.orc.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,6 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.sgl.orc.models.tipos.tipoDeEp;
 import org.sgl.orc.models.tipos.tipoEstadoDoPlano;
 import org.sgl.orc.models.tipos.tipoModalidade;
 
@@ -117,6 +119,25 @@ public class PlanoDeMeta {
 	}
 	public void setModalidades(List<Modalidade> modalidades) {
 		this.modalidades = modalidades;
+	}
+	public List<Modalidade> getModalidadesPagas() {
+		List<Modalidade> retorno = new ArrayList<Modalidade>();
+		for (Modalidade modalidade : modalidades) {
+			if (modalidade.getTipoDePagamento().equals(tipoDeEp.PAGO)) {
+				retorno.add(modalidade);
+			}
+		}
+		return retorno;
+	}
+	
+	public List<Modalidade> getModalidadesGratuitas() {
+		List<Modalidade> retorno = new ArrayList<Modalidade>();
+		for (Modalidade modalidade : modalidades) {
+			if (modalidade.getTipoDePagamento().equals(tipoDeEp.GRATUITO)) {
+				retorno.add(modalidade);
+			}
+		}
+		return retorno;
 	}
 	
 	
