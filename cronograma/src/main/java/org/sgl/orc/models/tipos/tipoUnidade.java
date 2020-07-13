@@ -6,7 +6,7 @@ public enum tipoUnidade {
 	private String descricao;
 
 	tipoUnidade(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

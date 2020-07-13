@@ -6,7 +6,7 @@ public enum tipoCargo {
 	private String descricao;
 
 	tipoCargo(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

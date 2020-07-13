@@ -7,7 +7,7 @@ public enum tipoModulo {
 	private String descricao;
 
 	tipoModulo(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

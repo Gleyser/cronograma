@@ -8,7 +8,7 @@ public enum tipoSetor {
 	private String descricao;
 
 	tipoSetor(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

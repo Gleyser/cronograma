@@ -6,7 +6,7 @@ public enum tipoContrato {
 	private String descricao;
 	
 	tipoContrato(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

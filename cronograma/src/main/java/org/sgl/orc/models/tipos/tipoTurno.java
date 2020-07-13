@@ -6,7 +6,7 @@ MANHÃ("M"), TARDE("T"), NOITE("N");
 private String descricao;
 
 	tipoTurno(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

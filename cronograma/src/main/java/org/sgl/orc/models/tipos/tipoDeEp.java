@@ -7,7 +7,7 @@ public enum tipoDeEp {
 	private String descricao;
 
 	tipoDeEp(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

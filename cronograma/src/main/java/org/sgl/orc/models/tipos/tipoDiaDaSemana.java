@@ -6,7 +6,7 @@ public enum tipoDiaDaSemana {
 	private String descricao;
 
 	tipoDiaDaSemana(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

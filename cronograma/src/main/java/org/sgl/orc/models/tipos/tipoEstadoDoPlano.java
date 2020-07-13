@@ -6,7 +6,7 @@ public enum tipoEstadoDoPlano {
 	private String descricao;
 
 	tipoEstadoDoPlano(String string) {
-		this.descricao = descricao;
+		this.descricao = string;
 	}
 
 	public String getDescricao() {

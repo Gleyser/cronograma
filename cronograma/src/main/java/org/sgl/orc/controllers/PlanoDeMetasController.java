@@ -10,6 +10,7 @@ import org.sgl.orc.models.Modalidade;
 import org.sgl.orc.models.PlanoDeMeta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -80,7 +81,7 @@ public class PlanoDeMetasController {
 		
 	
 	@RequestMapping(value = "editaranotitulodameta", method = RequestMethod.POST)
-	public ModelAndView editarMetas(Long id, String titulo, String ano) {
+	public ModelAndView editarMetas(Long id, String titulo, String ano, @ModelAttribute("modalidadesGratuitasQueNaoEstaoNoPlano")List<Modalidade> modalidadesGratuitasQueNaoEstaoNoPlano) {
 		PlanoDeMeta planoASerEditado = planoDao.recuperaPlanoDeMeta(id);
 		planoASerEditado.setTitulo(titulo);
 		planoASerEditado.setAno(ano);
@@ -113,7 +114,7 @@ public class PlanoDeMetasController {
         return "inicioCoordenador";
     }
 	
-	
+	// Recebe uma lista de modalidades e retorna as modalidades gratuitas que não fazem parte dessa lista
 	private List<Modalidade> modalidadesGratuitasQueNaoEstaoNoPlano(List<Modalidade> modalidadesDoPlano){
 		List<Modalidade> modalidadesGratuitas = modalidadeDao.recuperarModalidadesGratuitas();
 		List<Modalidade> retorno = new ArrayList<Modalidade>();
@@ -125,6 +126,7 @@ public class PlanoDeMetasController {
 		return retorno;
 	}
 	
+	// Recebe uma lista de modalidades e retorna as modalidades gratuitas que não fazem parte dessa lista
 	private List<Modalidade> modalidadesPagasQueNaoEstaoNoPlano(List<Modalidade> modalidadesDoPlano){
 		List<Modalidade> modalidadesPagas = modalidadeDao.recuperarModalidadesPagas();	
 		List<Modalidade> retorno = new ArrayList<Modalidade>();

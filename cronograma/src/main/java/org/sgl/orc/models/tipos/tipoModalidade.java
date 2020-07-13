@@ -18,7 +18,7 @@ QUALIFICACAO_EAD("Qualificação Profissional EAD");
 private String descricao;
 
 	tipoModalidade(String string) {
-	this.descricao = descricao;
+	this.descricao = string;
 }
 
 public String getDescricao() {

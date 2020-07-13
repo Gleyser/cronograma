@@ -143,8 +143,7 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="needs-validation" novalidate
-						action="editaranotitulodameta" method="post">
+					<form action="editaranotitulodameta" method="post">
 						<div class="row">
 							<input type="hidden" name="id" value="${plano.id}" />
 							<div class="col-md-9 mb-3">
@@ -190,7 +189,10 @@
 									
 									
 										<th scope="row">${modalidadeGratuitaDoPlano.tipoModalidade}</th>
-										<td><div class="custom-control custom-switch">
+										<td>				
+										
+										
+										<div class="custom-control custom-switch">
 												<input type="checkbox" class="custom-control-input"
 													id="${modalidadeGratuitaDoPlano.id}" checked> <label
 													class="custom-control-label" for="${modalidadeGratuitaDoPlano.id}"></label>
