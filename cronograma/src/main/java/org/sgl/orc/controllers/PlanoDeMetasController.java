@@ -36,16 +36,16 @@ public class PlanoDeMetasController {
 		plano.setMeta(meta);
 		planoDao.gravar(plano);
 		ModelAndView modelAndView = new ModelAndView("plano/inserir");
-		modelAndView.addObject("plano", plano);
+		modelAndView.addObject("plano", plano);		
 		
-		List<Modalidade> modalidadesPagasDoPlano = plano.getModalidadesPagas();
-		List<Modalidade> modalidadesGratuitasDoPlano = plano.getModalidadesGratuitas();
+		modelAndView.addObject("modalidadesPagasDoPlano", plano.getModalidadesPagas());
+		modelAndView.addObject("modalidadesGratuitasDoPlano", plano.getModalidadesGratuitas());	
+				
+		List<Modalidade> modalidadesPagasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesPagas(), plano);
+		List<Modalidade> modalidadesGratuitasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesGratuitas(), plano);
 		
-		modelAndView.addObject("modalidadesPagasDoPlano", modalidadesPagasDoPlano);
-		modelAndView.addObject("modalidadesGratuitasDoPlano", modalidadesGratuitasDoPlano);	
-		
-		modelAndView.addObject("modalidadesPagasQueNaoEstaoNoPlano", modalidadesPagasQueNaoEstaoNoPlano(modalidadesPagasDoPlano));
-		modelAndView.addObject("modalidadesGratuitasQueNaoEstaoNoPlano", modalidadesGratuitasQueNaoEstaoNoPlano(modalidadesGratuitasDoPlano));	
+		modelAndView.addObject("modalidadesPagasForaDoPlano", modalidadesPagasForaDoPlano);
+		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);	
 		
 		return modelAndView;
 		// Quando precisar redirecionar: return "redirect:listaContas";
@@ -56,7 +56,7 @@ public class PlanoDeMetasController {
 	public ModelAndView exibirPlanosDeMetasRascunhos(){
 		List<PlanoDeMeta> planos = planoDao.recuperarPlanosDeMetaRascunho();
 		ModelAndView modelAndView = new ModelAndView("plano/rascunho");
-		modelAndView.addObject("planos", planos);			
+		modelAndView.addObject("planos", planos);		
 		return modelAndView;
 		
 	}
@@ -66,39 +66,57 @@ public class PlanoDeMetasController {
 		PlanoDeMeta planoASerEditado = planoDao.recuperaPlanoDeMeta(id);
 		ModelAndView modelAndView = new ModelAndView("plano/inserir");
 		modelAndView.addObject("plano", planoASerEditado);
+		modelAndView.addObject("modalidadesPagasDoPlano", planoASerEditado.getModalidadesPagas());
+		modelAndView.addObject("modalidadesGratuitasDoPlano", planoASerEditado.getModalidadesGratuitas());	
+				
+		List<Modalidade> modalidadesPagasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesPagas(), planoASerEditado);
+		List<Modalidade> modalidadesGratuitasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesGratuitas(), planoASerEditado);
 		
-		List<Modalidade> modalidadesPagasDoPlano = planoASerEditado.getModalidadesPagas();
-		List<Modalidade> modalidadesGratuitasDoPlano = planoASerEditado.getModalidadesGratuitas();
-		
-		modelAndView.addObject("modalidadesPagasDoPlano", modalidadesPagasDoPlano);
-		modelAndView.addObject("modalidadesGratuitasDoPlano", modalidadesGratuitasDoPlano);	
-		
-		modelAndView.addObject("modalidadesPagasQueNaoEstaoNoPlano", modalidadesPagasQueNaoEstaoNoPlano(modalidadesPagasDoPlano));
-		modelAndView.addObject("modalidadesGratuitasQueNaoEstaoNoPlano", modalidadesGratuitasQueNaoEstaoNoPlano(modalidadesGratuitasDoPlano));	
+		modelAndView.addObject("modalidadesPagasForaDoPlano", modalidadesPagasForaDoPlano);
+		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);		
 		
 		return modelAndView;
 	}
 		
 	
 	@RequestMapping(value = "editaranotitulodameta", method = RequestMethod.POST)
-	public ModelAndView editarMetas(Long id, String titulo, String ano, @ModelAttribute("modalidadesGratuitasQueNaoEstaoNoPlano")List<Modalidade> modalidadesGratuitasQueNaoEstaoNoPlano) {
+	public ModelAndView editarMetas(Long id, String titulo, String ano, String [] modalidadesPagasDoPlano, String [] modalidadesGratuitasDoPlano) {
 		PlanoDeMeta planoASerEditado = planoDao.recuperaPlanoDeMeta(id);
 		planoASerEditado.setTitulo(titulo);
 		planoASerEditado.setAno(ano);
 		MetaAnual meta = planoDao.recuperaMetaAnualPeloAno(planoASerEditado.getAno());
 		planoASerEditado.setMeta(meta);
+		List<Modalidade> modalidadesAtualizadas = new ArrayList<Modalidade>();
+		
+		if (modalidadesGratuitasDoPlano != null) {
+			for (String modalidadeGratuita : modalidadesGratuitasDoPlano) {
+				Modalidade modalidade = modalidadeDao.recuperaModalidade(modalidadeGratuita, "GRATUITO");
+				modalidadesAtualizadas.add(modalidade);
+			}
+		}
+		
+		if(modalidadesPagasDoPlano != null) {
+			for (String modalidadePaga : modalidadesPagasDoPlano) {
+				Modalidade modalidade = modalidadeDao.recuperaModalidade(modalidadePaga, "PAGO");
+				modalidadesAtualizadas.add(modalidade);
+			}
+		}
+				
+		planoASerEditado.setModalidades(modalidadesAtualizadas);
+			
 		planoDao.atualizaPlano(planoASerEditado);
 		ModelAndView modelAndView = new ModelAndView("plano/inserir");
+					
 		modelAndView.addObject("plano", planoASerEditado);
+				
+		modelAndView.addObject("modalidadesPagasDoPlano", planoASerEditado.getModalidadesPagas());
+		modelAndView.addObject("modalidadesGratuitasDoPlano", planoASerEditado.getModalidadesGratuitas());	
+				
+		List<Modalidade> modalidadesPagasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesPagas(), planoASerEditado);
+		List<Modalidade> modalidadesGratuitasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesGratuitas(), planoASerEditado);
 		
-		List<Modalidade> modalidadesPagasDoPlano = planoASerEditado.getModalidadesPagas();
-		List<Modalidade> modalidadesGratuitasDoPlano = planoASerEditado.getModalidadesGratuitas();
-		
-		modelAndView.addObject("modalidadesPagasDoPlano", modalidadesPagasDoPlano);
-		modelAndView.addObject("modalidadesGratuitasDoPlano", modalidadesGratuitasDoPlano);	
-		
-		modelAndView.addObject("modalidadesPagasQueNaoEstaoNoPlano", modalidadesPagasQueNaoEstaoNoPlano(modalidadesPagasDoPlano));
-		modelAndView.addObject("modalidadesGratuitasQueNaoEstaoNoPlano", modalidadesGratuitasQueNaoEstaoNoPlano(modalidadesGratuitasDoPlano));		
+		modelAndView.addObject("modalidadesPagasForaDoPlano", modalidadesPagasForaDoPlano);
+		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);				
 		
 		return modelAndView;
 	}
@@ -114,30 +132,25 @@ public class PlanoDeMetasController {
         return "inicioCoordenador";
     }
 	
-	// Recebe uma lista de modalidades e retorna as modalidades gratuitas que não fazem parte dessa lista
-	private List<Modalidade> modalidadesGratuitasQueNaoEstaoNoPlano(List<Modalidade> modalidadesDoPlano){
-		List<Modalidade> modalidadesGratuitas = modalidadeDao.recuperarModalidadesGratuitas();
+	// Recebe um plano e uma lista de modalidades e retorna as modalidades que não estão no plano
+	private List<Modalidade> retornaModalidadesForaDoPlano(List<Modalidade> modalidades, PlanoDeMeta plano){
 		List<Modalidade> retorno = new ArrayList<Modalidade>();
-		for (Modalidade modalidade : modalidadesGratuitas) {
-			if (!modalidadesDoPlano.contains(modalidade)) {
+		for (Modalidade modalidade : modalidades) {
+			if (!plano.getModalidades().contains(modalidade)) {
 				retorno.add(modalidade);
 			}
 		}
 		return retorno;
 	}
 	
-	// Recebe uma lista de modalidades e retorna as modalidades gratuitas que não fazem parte dessa lista
-	private List<Modalidade> modalidadesPagasQueNaoEstaoNoPlano(List<Modalidade> modalidadesDoPlano){
-		List<Modalidade> modalidadesPagas = modalidadeDao.recuperarModalidadesPagas();	
-		List<Modalidade> retorno = new ArrayList<Modalidade>();
-		for (Modalidade modalidade : modalidadesPagas) {
-			if (!modalidadesDoPlano.contains(modalidade)) {
-				retorno.add(modalidade);
-			}
-		}
-		return retorno;
+	
+	private List<Modalidade> recuperarTodasModalidadesPagas(){
+		return modalidadeDao.recuperarModalidadesPagas();
 	}
 	
+	private List<Modalidade> recuperarTodasModalidadesGratuitas(){
+		return modalidadeDao.recuperarModalidadesGratuitas();
+	}
 	
 
 

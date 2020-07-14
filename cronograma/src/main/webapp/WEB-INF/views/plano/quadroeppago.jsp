@@ -44,15 +44,17 @@
 								</thead>
 
 								<tbody>
-									<tr>
-										<td>Uma modalidade</td>
-										<td>10</td>
-										<td>1000</td>
-										<td>1000</td>
-										<td>1000</td>
-										<td>2000</td>
-										<td>50000</td>
+									<c:forEach items="${modalidadesPagasDoPlano}" var="modalidadePagaDoPlano">
+									<tr>									
+										<td>${modalidadePagaDoPlano.tipoModalidade.descricao}</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>
+										<td>0</td>									
 									</tr>
+								</c:forEach>
 								</tbody>
 							</table>
 						</div>

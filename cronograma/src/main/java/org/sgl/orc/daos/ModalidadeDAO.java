@@ -24,4 +24,9 @@ public class ModalidadeDAO {
 	    return manager.createQuery("select p from Modalidade p where p.tipoDePagamento='PAGO' order by p.tipoModalidade", Modalidade.class).getResultList();
 	}
 
+	public Modalidade recuperaModalidade(String tipoModalidade, String tipoDePagamento) {
+		return manager.createQuery("select p from Modalidade p where p.tipoModalidade='" + tipoModalidade + "' and p.tipoDePagamento='" + tipoDePagamento + "'", Modalidade.class).getSingleResult();
+	}
+	
+	
 }

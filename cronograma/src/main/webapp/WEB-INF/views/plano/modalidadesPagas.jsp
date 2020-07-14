@@ -1,13 +1,14 @@
-<!-- inicio de Habilitação técnica -->
+<c:forEach items="${modalidadesPagasDoPlano}" var="modalidadePagaDoPlano">
+<!-- inicio de uma modalidade paga -->
 <div class="card shadow mb-4">
 	<!-- Card Header - Accordion -->
-	<a href="#collapseCardModalidadePaga_ID" class="d-block card-header py-3"
+	<a href="#collapseCardModalidadePaga_${modalidadePagaDoPlano.tipoModalidade}" class="d-block card-header py-3"
 		data-toggle="collapse" role="button" aria-expanded="true"
 		aria-controls="collapseCardModalidadePaga_ID">
-		<h6 class="m-0 font-weight-bold text-primary">Habilitação Técnica</h6>
+		<h6 class="m-0 font-weight-bold text-primary">${modalidadePagaDoPlano.tipoModalidade.descricao}</h6>
 	</a>
 	<!-- Card Content - Collapse -->
-	<div class="collapse" id="collapseCardModalidadePaga_ID">
+	<div class="collapse" id="collapseCardModalidadePaga_${modalidadePagaDoPlano.tipoModalidade}">
 
 		<!-- Card Body -->
 		<div class="card-body">
@@ -33,5 +34,5 @@
 
 </div>
 </div>
-
-<!-- fim de Habilitação técnica -->
+</c:forEach>
+<!-- fim de uma modalidade paga -->

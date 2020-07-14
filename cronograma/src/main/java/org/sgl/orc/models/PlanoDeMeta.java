@@ -41,7 +41,8 @@ public class PlanoDeMeta {
 	private MetaAnual meta;
 	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	private List<Modalidade> modalidades;
-	
+	private String [] modalidadesPagasDoPlano;
+	private String [] modalidadesGratuitasDoPlano;   
 	
 	
 	public int getId() {
@@ -120,6 +121,7 @@ public class PlanoDeMeta {
 	public void setModalidades(List<Modalidade> modalidades) {
 		this.modalidades = modalidades;
 	}
+		
 	public List<Modalidade> getModalidadesPagas() {
 		List<Modalidade> retorno = new ArrayList<Modalidade>();
 		for (Modalidade modalidade : modalidades) {
@@ -139,6 +141,20 @@ public class PlanoDeMeta {
 		}
 		return retorno;
 	}
+	
+	public String[] getModalidadesPagasDoPlano() {
+		return modalidadesPagasDoPlano;
+	}
+	public void setModalidadesPagasDoPlano(String[] modalidadesPagasDoPlano) {
+		this.modalidadesPagasDoPlano = modalidadesPagasDoPlano;
+	}
+	public String[] getModalidadesGratuitasDoPlano() {
+		return modalidadesGratuitasDoPlano;
+	}
+	public void setModalidadesGratuitasDoPlano(String[] modalidadesGratuitasDoPlano) {
+		this.modalidadesGratuitasDoPlano = modalidadesGratuitasDoPlano;
+	}
+	
 	
 	
 	

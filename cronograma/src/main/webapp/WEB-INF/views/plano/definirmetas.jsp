@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/views/cabecalhoCoordenador.jsp" %>
 <div class="container" align="center">
- <h1 class="h4 mb-3 font-weight-normal">Definir metas anuais</h1>
+ <h1 class="h4 mb-3 font-weight-normal">Definir metas e objetivos anuais</h1>
 
 <div class="col-md-8 order-md-1">      
       <form class="needs-validation" novalidate action="salvarmetaanual" method="post">
