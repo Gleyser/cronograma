@@ -46,6 +46,10 @@ public class Modalidade {
 	public void setTipoModalidade(tipoModalidade tipoModalidade) {
 		this.tipoModalidade = tipoModalidade;
 	}
+	
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

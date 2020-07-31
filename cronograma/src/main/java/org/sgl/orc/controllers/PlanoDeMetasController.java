@@ -3,14 +3,15 @@ package org.sgl.orc.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.sgl.orc.daos.CursoDAO;
 import org.sgl.orc.daos.ModalidadeDAO;
 import org.sgl.orc.daos.PlanoDeMetaDAO;
+import org.sgl.orc.models.Curso;
 import org.sgl.orc.models.MetaAnual;
 import org.sgl.orc.models.Modalidade;
 import org.sgl.orc.models.PlanoDeMeta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,6 +25,9 @@ public class PlanoDeMetasController {
 	@Autowired
 	private ModalidadeDAO modalidadeDao;
 	
+	@Autowired
+	private CursoDAO cursoDao;
+	
 	@RequestMapping("inserirnovoplanodemeta")
     public String inserirNovoPlanoDeMeta(){
 		return "plano/novo";
@@ -34,18 +38,20 @@ public class PlanoDeMetasController {
 		plano.tornarPlanoRascunho();
 		MetaAnual meta = planoDao.recuperaMetaAnualPeloAno(plano.getAno());
 		plano.setMeta(meta);
+		plano.inicializaListasDeCursos();
 		planoDao.gravar(plano);
 		ModelAndView modelAndView = new ModelAndView("plano/inserir");
+		plano.inicializaModalidadesDoPlano();
 		modelAndView.addObject("plano", plano);		
 		
 		modelAndView.addObject("modalidadesPagasDoPlano", plano.getModalidadesPagas());
 		modelAndView.addObject("modalidadesGratuitasDoPlano", plano.getModalidadesGratuitas());	
-				
-		List<Modalidade> modalidadesPagasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesPagas(), plano);
-		List<Modalidade> modalidadesGratuitasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesGratuitas(), plano);
+						
+		modelAndView.addObject("modalidadesPagasForaDoPlano", recuperarTodasModalidadesPagas());
+		modelAndView.addObject("modalidadesGratuitasForaDoPlano",recuperarTodasModalidadesGratuitas());	
 		
-		modelAndView.addObject("modalidadesPagasForaDoPlano", modalidadesPagasForaDoPlano);
-		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);	
+		// Inserir todos os cursos modelo
+		modelAndView.addObject("cursosModelo",cursoDao.getCursosModelos());
 		
 		return modelAndView;
 		// Quando precisar redirecionar: return "redirect:listaContas";
@@ -73,7 +79,10 @@ public class PlanoDeMetasController {
 		List<Modalidade> modalidadesGratuitasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesGratuitas(), planoASerEditado);
 		
 		modelAndView.addObject("modalidadesPagasForaDoPlano", modalidadesPagasForaDoPlano);
-		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);		
+		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);	
+		
+		// Inserir todos os cursos modelo
+		modelAndView.addObject("cursosModelo",cursoDao.getCursosModelos());
 		
 		return modelAndView;
 	}
@@ -116,7 +125,10 @@ public class PlanoDeMetasController {
 		List<Modalidade> modalidadesGratuitasForaDoPlano = retornaModalidadesForaDoPlano(recuperarTodasModalidadesGratuitas(), planoASerEditado);
 		
 		modelAndView.addObject("modalidadesPagasForaDoPlano", modalidadesPagasForaDoPlano);
-		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);				
+		modelAndView.addObject("modalidadesGratuitasForaDoPlano",modalidadesGratuitasForaDoPlano);		
+			
+		// Inserir todos os cursos modelo
+		modelAndView.addObject("cursosModelo",cursoDao.getCursosModelos());
 		
 		return modelAndView;
 	}
@@ -152,6 +164,22 @@ public class PlanoDeMetasController {
 		return modalidadeDao.recuperarModalidadesGratuitas();
 	}
 	
-
-
+	@RequestMapping(value = "inserircursogratuitonoplano", method = RequestMethod.POST)
+	public ModelAndView inserirCursoGratuitoNoPlano(Long idPlano, Long idCurso, int quantidade, int modalidadeGratuitaDoPlano) {
+		PlanoDeMeta planoASerEditado = planoDao.recuperaPlanoDeMeta(idPlano);
+		Curso cursoModeloASerCopiado = cursoDao.getCurso(idCurso);
+		Curso novoCurso = new Curso();
+		novoCurso.removaModelo();
+		novoCurso.setAno(planoASerEditado.getAno());
+		novoCurso.setNome(cursoModeloASerCopiado.getNome());
+		novoCurso.setCargaHorariaTotal(cursoModeloASerCopiado.getCargaHorariaTotal());
+		novoCurso.setSetor(cursoModeloASerCopiado.getSetor());
+		Modalidade modalidadeUnica = modalidadeDao.getModalidade(modalidadeGratuitaDoPlano);
+		novoCurso.deixaComApenasUmaModalidade(modalidadeUnica);
+		cursoDao.gravar(novoCurso);
+		planoASerEditado.addCursoGratuito(novoCurso);
+		planoDao.atualizaPlano(planoASerEditado);
+		return editarRascunho(idPlano);	
+		
+	}
 }

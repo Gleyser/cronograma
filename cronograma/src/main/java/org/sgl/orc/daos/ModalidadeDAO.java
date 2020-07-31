@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.sgl.orc.models.Curso;
 import org.sgl.orc.models.Modalidade;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,5 +29,8 @@ public class ModalidadeDAO {
 		return manager.createQuery("select p from Modalidade p where p.tipoModalidade='" + tipoModalidade + "' and p.tipoDePagamento='" + tipoDePagamento + "'", Modalidade.class).getSingleResult();
 	}
 	
+	public Modalidade getModalidade(int id) {
+		return manager.createQuery("select p from Modalidade p where p.id =" +  id, Modalidade.class).getSingleResult();
+	}
 	
 }

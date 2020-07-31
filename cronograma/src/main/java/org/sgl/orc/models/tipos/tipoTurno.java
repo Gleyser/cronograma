@@ -1,7 +1,7 @@
 package org.sgl.orc.models.tipos;
 
 public enum tipoTurno {
-MANHÃ("M"), TARDE("T"), NOITE("N");
+MANHÃ("Manhã"), TARDE("Tarde"), NOITE("Noite");
 
 private String descricao;
 

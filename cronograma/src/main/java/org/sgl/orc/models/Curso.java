@@ -1,7 +1,9 @@
 package org.sgl.orc.models;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,10 +15,12 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 
 import org.sgl.orc.models.tipos.tipoDiaDaSemana;
-import org.sgl.orc.models.tipos.tipoModalidade;
 import org.sgl.orc.models.tipos.tipoSetor;
 import org.sgl.orc.models.tipos.tipoTurno;
 import org.sgl.orc.models.tipos.tipoUnidade;
@@ -25,13 +29,16 @@ import org.sgl.orc.models.tipos.tipoUnidade;
  * @author Gleyser
  *
  */
+/**
+ * @author Gleyser
+ *
+ */
 @Entity
 public class Curso {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;	
+	@OrderBy ("nome ASC")
 	private String nome;
-	@Enumerated(EnumType.STRING)
-	private tipoModalidade modalidade;
 	private String ano;
 	private int semestre;
 	private int trimestre;
@@ -52,24 +59,21 @@ public class Curso {
 	private int cargaHorariaTotal;
 	private int cargaHorariaRealizada;
 	private int numAlunos;
-	// Se for true, eh um modelo e servirá pra ser copiado para criar cursos iguais
+	// Se for true, eh um curso criado em outro plano e será poderá ser herdado em um plano seguinte
 	@Column(name = "ehResidual", nullable = false)
 	private boolean ehResidual;
 	@Enumerated(EnumType.STRING)
 	private tipoUnidade unidade;
-	
+	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+	private List<Modalidade> modalidades;
+		
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public tipoModalidade getModalidade() {
-		return modalidade;
-	}
-	public void setModalidade(tipoModalidade modalidade) {
-		this.modalidade = modalidade;
-	}
+	
 	public String getAno() {
 		return ano;
 	}
@@ -132,7 +136,13 @@ public class Curso {
 	
 	public void removaModelo() {
 		this.ehModelo = false;
+		this.semestre = 1;
+		this.trimestre = 1;
+		this.turno = tipoTurno.MANHÃ;
+		this.numAlunos = 0;	
+		this.cargaHorariaRealizada = 0;
 	}
+	
 	public int getCargaHorariaTotal() {
 		return cargaHorariaTotal;
 	}
@@ -193,8 +203,19 @@ public class Curso {
 	public void setUnidade(tipoUnidade unidade) {
 		this.unidade = unidade;
 	}
+	public List<Modalidade> getModalidades() {
+		return modalidades;
+	}
+	public void setModalidades(List<Modalidade> modalidades) {
+		this.modalidades = modalidades;
+	}
+	
+	public void deixaComApenasUmaModalidade(Modalidade modalidade) {
+		List<Modalidade> novoConjuntoDeModalidadeUnica = new ArrayList<Modalidade>();
+		novoConjuntoDeModalidadeUnica.add(modalidade);
+		this.modalidades = novoConjuntoDeModalidadeUnica;
+	}
 	
 	
-		
 
 }

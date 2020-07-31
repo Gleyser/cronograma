@@ -189,11 +189,11 @@
 					<!-- Topbar -->
 					<nav
 						class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-						<h5>
+						<h6>
 							Sistema de Informação Gerencial <br> Centro de Formação
 							Profissional Prof. Stenio Lopes <br> Instituto SENAI de
 							Tecnologia em Automação
-						</h5>
+						</h6>
 
 
 						<!-- Sidebar Toggle (Topbar) -->

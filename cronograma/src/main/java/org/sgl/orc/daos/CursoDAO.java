@@ -35,7 +35,7 @@ public class CursoDAO {
 	}
 
 	public List<Curso> getCursosModelos() {
-		return manager.createQuery("select p from Curso p where p.ehModelo = 1", Curso.class).getResultList();
+		return manager.createQuery("select p from Curso p where p.ehModelo = 1 order by p.nome", Curso.class).getResultList();
 	}
 
 	public Curso getCurso(Long id) {
