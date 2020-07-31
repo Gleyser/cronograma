@@ -66,7 +66,7 @@ public class Curso {
 	private tipoUnidade unidade;
 	@ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
 	private List<Modalidade> modalidades;
-		
+			
 	public String getNome() {
 		return nome;
 	}
@@ -215,6 +215,11 @@ public class Curso {
 		novoConjuntoDeModalidadeUnica.add(modalidade);
 		this.modalidades = novoConjuntoDeModalidadeUnica;
 	}
+	public Modalidade getModalidadeUnica() {
+		return this.modalidades.get(0);
+	}
+	
+	
 	
 	
 

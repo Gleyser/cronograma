@@ -31,10 +31,8 @@
 
 
 
-			<!-- Inserir os cursos dessa modalidade -->
-
-			<!-- Inserir os cursos do plano nessa modalidade -->
-			<%@ include file="/WEB-INF/views/plano/curso.jsp"%>
+			<!-- Inserir os cursos dessa modalidade -->			
+			<%@ include file="/WEB-INF/views/plano/cursoGratuito.jsp"%>
 
 		</div>
 	</div>
@@ -116,8 +114,5 @@
 			</div>
 		</div>
 	</div> <!-- Fim do Modal de Editar titulo e ano -->
-
-
-</div>
 <!-- fim de uma modalidade gratuita -->
 </c:forEach>

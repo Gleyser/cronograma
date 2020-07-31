@@ -37,8 +37,9 @@
 				<!-- Dropdown Card Ações -->
 				<!-- Os cursos dessa modalidade -->
 
-				<!-- EP - Pago -->
-				<%@ include file="/WEB-INF/views/plano/curso.jsp"%>
+				<!-- Inserir os cursos dessa modalidade -->	
+				<!-- Atualizar isso aqui -->			
+			<%@ include file="/WEB-INF/views/plano/cursoGratuito.jsp"%>
 
 			</div>
 		</div>
@@ -67,6 +68,6 @@
 	</div>
 	<!-- Fim do Modal de Editar titulo e ano -->
 
-	</div>
+	
 </c:forEach>
 <!-- fim de uma modalidade paga -->
